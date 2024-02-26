@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  my-app:
+    image: my-app:1.0
+    ports:
+      - 4000:4000
+    environment:
+      - MONGO_DB_USERNAME=root
+      - MONGO_DB_PWD=example
+      - PORT=4000
+      - EMAILS_COLLECTION=emails
+
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+    - mongo-data:/data/db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: password  
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongodb:27017/
+volumes:
+  mongo-data:
+    driver: local
