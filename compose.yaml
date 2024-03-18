@@ -1,8 +1,8 @@
 version: '3.1'
 
 services:
-  my-app:
-    image: my-app:1.0
+  server:
+    image: server:1.0
     ports:
       - 4000:4000
     environment:

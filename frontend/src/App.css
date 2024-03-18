@@ -1,11 +1,14 @@
+.app {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    font-size: 16px;
+    align-items: center;
+}
 
-
-
-
-
-
-
-
-
-
-
+ul li {
+    display: inline-block;
+    margin: 10px;
+}

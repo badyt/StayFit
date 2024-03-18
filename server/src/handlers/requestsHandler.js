@@ -37,23 +37,20 @@ const handleLogin = async (req, res, email, password) => {
 //refresh access token 
 const refreshAccessToken = async (req, res) => {
    const token = req.cookies.refreshtoken;
-   console.log(token);
    if (!token) return res.send({ accesstoken: '' });
    let payload = null;
    try {
       payload = verify(token, process.env.REFRESH_TOKEN_SECRET);
-      console.log( "payload " + payload.userId);
    } catch (err) {
       return res.send({ accesstoken: '' });
    }
    const user = await Database.findOne(Emails_Collection, { email: payload.userId });
-   console.log(user);
    if (!user || user.refreshtoken !== token) return res.send({ accesstoken: '' });
    const accesstoken = createAccessToken(user.email);
    const refreshtoken = createRefreshToken(user.email);
    sendRefreshToken(res, refreshtoken);
    Database.updateOne(Emails_Collection,{email: user.email},{refreshtoken: refreshtoken});
-   return res.send({ accesstoken });
+   return res.send({accessToken: accesstoken});
 }
 
 
