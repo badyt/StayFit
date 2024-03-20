@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MenuAppBar from './components/MenuAppBar';
 import Navigation from './components/Navigation';
-import Login from './components/Login/Login';
-import Register from './components/Register';
+import Login from './components/Login/';
+import Register from './components/Register/';
 // import Protected from './components/Protected';
 import Content from './components/Content';
 import './App.css';
@@ -16,15 +16,19 @@ function App() {
   const { setUser, checkRefreshToken } = useLoginStore();
   // First thing, check if a refreshtoken exist
   useEffect(() => {
-    try {
-      checkRefreshToken().then(result => {
-        setUser({ accessToken: result.accessToken});
-      })
-      setLoading(false);
-    } catch (err) {
-      setLoading(false);
-      toast.error('Error while refreshing token!');
-    }
+    const fetchData = async () => {
+      try {
+        const result = await checkRefreshToken(); // Wait for the promise to resolve
+        console.log(result);
+        setUser({ accessToken: result.accessToken });
+      } catch (err) {
+        toast.error('Error while refreshing token!');
+      } finally {
+        setLoading(false); // Set loading to false after the asynchronous operation completes
+      }
+    };
+  
+    fetchData();
   }, []);
 
   if (loading) return <div>Loading ...</div>

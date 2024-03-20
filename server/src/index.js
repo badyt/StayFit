@@ -34,7 +34,7 @@ server.post('/register', async (req, res) => {
     const { email, password } = req.body;
     try {
         await requestHandler.handleRegisteration(email, password);
-        res.send('User Created Successfully');
+        res.send({ message: 'User Created' });
     } catch (error) {
         res.send({ error: error.message });
     }

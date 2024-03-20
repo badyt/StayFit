@@ -37,7 +37,9 @@ const handleLogin = async (req, res, email, password) => {
 //refresh access token 
 const refreshAccessToken = async (req, res) => {
    const token = req.cookies.refreshtoken;
-   if (!token) return res.send({ accesstoken: '' });
+   if (!token) {
+      return res.send({ accesstoken: '' });
+   }
    let payload = null;
    try {
       payload = verify(token, process.env.REFRESH_TOKEN_SECRET);
@@ -45,7 +47,10 @@ const refreshAccessToken = async (req, res) => {
       return res.send({ accesstoken: '' });
    }
    const user = await Database.findOne(Emails_Collection, { email: payload.userId });
-   if (!user || user.refreshtoken !== token) return res.send({ accesstoken: '' });
+   
+   if (!user || user.refreshtoken !== token){
+       return res.send({ accesstoken: '' });
+   }
    const accesstoken = createAccessToken(user.email);
    const refreshtoken = createRefreshToken(user.email);
    sendRefreshToken(res, refreshtoken);
