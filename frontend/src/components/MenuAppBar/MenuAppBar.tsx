@@ -8,13 +8,15 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import useLoginStore from '../../stores/loginstore';
+import SideDrawer from '../SideDrawer'
 
 export default function MenuAppBar() {
 
+  const [openDrawer, setDrawer] = React.useState(false);
   const [auth, setAuth] = React.useState(false);
-  const { user, logout} = useLoginStore();
+  const { user, logout } = useLoginStore();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  
+
   React.useEffect(() => {
     const loggedIn = (user?.accessToken) ? true : false;
     setAuth(loggedIn);
@@ -43,9 +45,11 @@ export default function MenuAppBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => setDrawer(!openDrawer)}
           >
             <MenuIcon />
           </IconButton>)}
+        <SideDrawer setDrawer={(value) => setDrawer(value)} isOpen={openDrawer} />
         <Typography
           fontFamily={"Garamond"}
           fontWeight={"bold"}

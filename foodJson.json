@@ -1,0 +1,195 @@
+{
+  "name": "Apple",
+  "calories_per_100g": 52,
+  "protein_per_100g": 0.3
+}
+{
+  "name": "Banana",
+  "calories_per_100g": 89,
+  "protein_per_100g": 1.1
+}
+{
+  "name": "Chicken breast (skinless, boneless)",
+  "calories_per_100g": 165,
+  "protein_per_100g": 31
+}
+{
+  "name": "White rice (cooked)",
+  "calories_per_100g": 130,
+  "protein_per_100g": 2.7
+}
+{
+  "name": "Spinach (cooked)",
+  "calories_per_100g": 23,
+  "protein_per_100g": 2.9
+}
+{
+  "name": "Potato (baked)",
+  "calories_per_100g": 93,
+  "protein_per_100g": 2.1
+}
+{
+  "name": "Broccoli (cooked)",
+  "calories_per_100g": 34,
+  "protein_per_100g": 2.8
+}
+{
+  "name": "Salmon (cooked)",
+  "calories_per_100g": 206,
+  "protein_per_100g": 20
+}
+{
+  "name": "Eggs (boiled)",
+  "calories_per_100g": 155,
+  "protein_per_100g": 13
+}
+{
+  "name": "Bread (whole wheat)",
+  "calories_per_100g": 247,
+  "protein_per_100g": 9.4
+}
+{
+  "name": "Pasta (cooked)",
+  "calories_per_100g": 131,
+  "protein_per_100g": 5.8
+}
+{
+  "name": "Carrots (raw)",
+  "calories_per_100g": 41,
+  "protein_per_100g": 0.9
+}
+{
+  "name": "Almonds",
+  "calories_per_100g": 576,
+  "protein_per_100g": 21
+}
+{
+  "name": "Milk (whole)",
+  "calories_per_100g": 61,
+  "protein_per_100g": 3.2
+}
+{
+  "name": "Cheese (cheddar)",
+  "calories_per_100g": 402,
+  "protein_per_100g": 24
+}
+{
+  "name": "Beef (lean ground, cooked)",
+  "calories_per_100g": 250,
+  "protein_per_100g": 26
+}
+{
+  "name": "Olive oil",
+  "calories_per_100g": 884,
+  "protein_per_100g": 0
+}
+{
+  "name": "Avocado",
+  "calories_per_100g": 160,
+  "protein_per_100g": 2
+}
+{
+  "name": "Yogurt (plain, whole milk)",
+  "calories_per_100g": 61,
+  "protein_per_100g": 3.5
+}
+{
+  "name": "Oatmeal (cooked)",
+  "calories_per_100g": 71,
+  "protein_per_100g": 2.5
+}
+{
+  "name": "Oranges",
+  "calories_per_100g": 47,
+  "protein_per_100g": 0.9
+}
+{
+  "name": "Grapes",
+  "calories_per_100g": 69,
+  "protein_per_100g": 0.7
+}
+{
+  "name": "Tomatoes",
+  "calories_per_100g": 18,
+  "protein_per_100g": 0.9
+}
+{
+  "name": "Cucumber",
+  "calories_per_100g": 15,
+  "protein_per_100g": 0.6
+}
+{
+  "name": "Pork (loin chop, cooked)",
+  "calories_per_100g": 242,
+  "protein_per_100g": 27
+}
+{
+  "name": "Turkey breast (cooked)",
+  "calories_per_100g": 135,
+  "protein_per_100g": 29
+}
+{
+  "name": "Shrimp (cooked)",
+  "calories_per_100g": 99,
+  "protein_per_100g": 20
+}
+{
+  "name": "Tofu (firm, raw)",
+  "calories_per_100g": 76,
+  "protein_per_100g": 8
+}
+{
+  "name": "Lentils (cooked)",
+  "calories_per_100g": 116,
+  "protein_per_100g": 9
+}
+  {
+  "name": "Chickpeas (cooked)",
+  "calories_per_100g": 164,
+  "protein_per_100g": 8.9
+}
+{
+  "name": "Peanut butter",
+  "calories_per_100g": 588,
+  "protein_per_100g": 25
+}
+  {
+  "name": "Honey",
+  "calories_per_100g": 304,
+  "protein_per_100g": 0.3
+}
+{
+  "name": "Quinoa (cooked)",
+  "calories_per_100g": 120,
+  "protein_per_100g": 4.4
+}
+{
+  "name": "Sweet potato (baked)",
+  "calories_per_100g": 86,
+  "protein_per_100g": 1.6
+}
+{
+  "name": "Corn (cooked)",
+  "calories_per_100g": 96,
+  "protein_per_100g": 3.4
+}
+{
+  "name": "Blueberries",
+  "calories_per_100g": 57,
+  "protein_per_100g": 0.7
+}
+{
+  "name": "Strawberries",
+  "calories_per_100g": 32,
+  "protein_per_100g": 0.7
+}
+{
+  "name": "Pineapple",
+  "calories_per_100g": 50,
+  "protein_per_100g": 0.5
+}
+{
+  "name": "Raspberries",
+  "calories_per_100g": 52,
+  "protein_per_100g": 1.5
+}

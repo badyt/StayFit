@@ -3,7 +3,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MenuAppBar from './components/MenuAppBar';
-import Navigation from './components/Navigation';
 import Login from './components/Login/';
 import Register from './components/Register/';
 // import Protected from './components/Protected';
@@ -19,7 +18,6 @@ function App() {
     const fetchData = async () => {
       try {
         const result = await checkRefreshToken(); // Wait for the promise to resolve
-        console.log(result);
         setUser({ accessToken: result.accessToken });
       } catch (err) {
         toast.error('Error while refreshing token!');
@@ -27,7 +25,7 @@ function App() {
         setLoading(false); // Set loading to false after the asynchronous operation completes
       }
     };
-  
+
     fetchData();
   }, []);
 
@@ -38,7 +36,6 @@ function App() {
     <div className="app">
       <ToastContainer />
       <BrowserRouter>
-        {/* <Navigation /> */}
         <MenuAppBar />
         <Routes>
           <Route path="/" element={<Content />} />

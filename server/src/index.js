@@ -9,9 +9,10 @@ const { isAuth } = require('./handlers/isAuth');
 const server = express();
 
 server.use(cookieParser());
-server.use(cors({ 
+server.use(cors({
     origin: 'http://localhost:5173',
-    credentials: true }));
+    credentials: true
+}));
 
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
@@ -74,6 +75,14 @@ server.post('/protected', async (req, res) => {
 server.post('/refresh_token', async (req, res) => {
     try {
         await requestHandler.refreshAccessToken(req, res);
+    } catch (error) {
+        res.send({ error: error.message });
+    }
+})
+
+server.get('/getAllFood', async (req, res) => {
+    try {
+        await requestHandler.getAllFood(res);
     } catch (error) {
         res.send({ error: error.message });
     }

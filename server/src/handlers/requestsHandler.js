@@ -30,7 +30,7 @@ const handleLogin = async (req, res, email, password) => {
    const refreshtoken = createRefreshToken(user.email);
    sendRefreshToken(res, refreshtoken);
    sendAccessToken(req, res, accesstoken);
-   Database.updateOne(Emails_Collection,{email: user.email},{refreshtoken: refreshtoken});
+   Database.updateOne(Emails_Collection, { email: user.email }, { refreshtoken: refreshtoken });
    return true;
 }
 
@@ -47,16 +47,26 @@ const refreshAccessToken = async (req, res) => {
       return res.send({ accesstoken: '' });
    }
    const user = await Database.findOne(Emails_Collection, { email: payload.userId });
-   
-   if (!user || user.refreshtoken !== token){
-       return res.send({ accesstoken: '' });
+
+   if (!user || user.refreshtoken !== token) {
+      return res.send({ accesstoken: '' });
    }
    const accesstoken = createAccessToken(user.email);
    const refreshtoken = createRefreshToken(user.email);
    sendRefreshToken(res, refreshtoken);
-   Database.updateOne(Emails_Collection,{email: user.email},{refreshtoken: refreshtoken});
-   return res.send({accessToken: accesstoken});
+   Database.updateOne(Emails_Collection, { email: user.email }, { refreshtoken: refreshtoken });
+   return res.send({ accessToken: accesstoken });
 }
 
+const getAllFood = async (res) => {
+   try {
+      const result = await Database.find('food', {},  {_id: 0 });
+      console.log(result);
+      return res.send(result);
+   } catch (err) {
+      throw Error('something went wrong fetching food data');
+   }
 
-module.exports = { handleRegisteration, handleLogin, refreshAccessToken }
+}
+
+module.exports = { handleRegisteration, handleLogin, refreshAccessToken, getAllFood }

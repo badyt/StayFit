@@ -1,0 +1,13 @@
+/* CSS */
+
+.centered-cell {
+    text-align: center !important;
+}
+
+.centered-columns .MuiDataGrid-root .centered-cell {
+    justify-content: center !important;
+}
+
+.food-wrapper{
+    margin-top: 2rem;
+}

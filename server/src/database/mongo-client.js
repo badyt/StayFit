@@ -60,6 +60,15 @@ class MongoDBClient {
     const result = await collection.updateOne(filter, { $set: update });
     return result;
   }
+
+  //find documents in a collection by query with projection and options
+  async find(collectionName, query, projection = {}, options = {}) {
+    if (!this.db) {
+      throw new Error('Database not initialized. Call connect() first.');
+    }
+    const collection = this.db.collection(collectionName);
+    return collection.find(query, options).project(projection).toArray();
+  }
 }
 
 
