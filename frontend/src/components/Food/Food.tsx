@@ -54,7 +54,7 @@ export default function FoodComponent() {
             const data = await response.json();
             const rowsWithId = data.map((row: FoodData, index: number) => {
                 // Assign an incrementing numeric ID to each row
-                return { ...row, id: index, image: `../../../images/${row.name}.png` };
+                return { ...row, id: index, image: `../../../images/Food/${row.name}.png` };
             });
             setFoodData(rowsWithId);
         } catch (error) {

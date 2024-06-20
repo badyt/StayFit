@@ -2,13 +2,13 @@ import { create } from 'zustand';
 
 // Define the type of state
 interface SideDrawerStore {
-    pickedContent: string;
-    setContent: (loading: string) => void
+    pickedDrawerTab: DrawerTab | null;
+    setDrawerTab : (value: DrawerTab) => void;
 }
 
 const useSideDrawerStore = create<SideDrawerStore>((set) => ({
-    pickedContent: "",
-    setContent: newContent => set(() => ({ pickedContent: newContent }))
+    pickedDrawerTab: null,
+    setDrawerTab: newDrawerTab => set(() => ({pickedDrawerTab: newDrawerTab})),
 }));
 
 export default useSideDrawerStore;

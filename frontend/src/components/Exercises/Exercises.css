@@ -1,0 +1,19 @@
+  .category {
+      margin: 20px;
+  }
+
+  .exercise-row {
+      display: flex;
+      overflow-x: scroll;
+  }
+
+  .exercise {
+      margin: 10px;
+      text-align: center;
+  }
+
+  .exercise img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+  }

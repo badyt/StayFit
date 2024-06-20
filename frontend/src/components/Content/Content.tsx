@@ -1,17 +1,18 @@
 import { Navigate } from "react-router-dom";
 import useLoginStore from '../../stores/loginstore';
 import React from "react";
-import FoodComponent from '../Food'
+import FoodComponent from '../Food';
+import Exercises from "../Exercises";
 import useSideDrawerStore from "../../stores/sidedrawerstore";
 const Content = () => {
     const { user } = useLoginStore();
-    const { pickedContent } = useSideDrawerStore();
+    const { pickedDrawerTab } = useSideDrawerStore();
     if (!user?.accessToken)
         return <Navigate to="/login" />;
     
     
-    const getPickedContentComponent = (pickedcontent: string): React.ReactNode => {
-        switch (pickedcontent) {
+    const getPickedContentComponent = (pickedDrawerTab: DrawerTab | null): React.ReactNode => {
+        switch (pickedDrawerTab?.text) {
             case "Food":
                 return <FoodComponent/>
             case "Diet Plan":
@@ -27,7 +28,7 @@ const Content = () => {
             case "Workout Plans":
                 return <div>Workout Plans</div>
             case "Workout Exercises":
-                return <div>Workout Exercises</div>
+                return <Exercises/>
             default:
                 return <div>
                     This is the content.
@@ -35,7 +36,7 @@ const Content = () => {
         }
     }
     return (<div>
-        {getPickedContentComponent(pickedContent)}
+        {getPickedContentComponent(pickedDrawerTab)}
     </div>
 
     );

@@ -22,33 +22,34 @@ interface SideDrawerProps {
   isOpen: boolean
 }
 
-interface DrawerTab {
-  text: string,
-  icon: any
-}
-
 type DrawerListType = DrawerTab[];
 
 const FirstDrawerListItems: DrawerListType = [
-  { text: "Diet Plan", icon: FoodBankIcon },
-  { text: "Diet History", icon: MenuBookIcon },
-  { text: "Workout Routine", icon: FitnessCenterIcon },
-  { text: "Workout History", icon: HistoryIcon },
-  { text: "Weight Measurements", icon: ScaleIcon }
+  { text: "Diet Plan", icon: FoodBankIcon, containSearch: false, containSelect: false, selectionItems: null },
+  { text: "Diet History", icon: MenuBookIcon, containSearch: false, containSelect: false, selectionItems: null },
+  { text: "Workout Routine", icon: FitnessCenterIcon, containSearch: false, containSelect: false, selectionItems: null },
+  { text: "Workout History", icon: HistoryIcon, containSearch: false, containSelect: false, selectionItems: null },
+  { text: "Weight Measurements", icon: ScaleIcon, containSearch: false, containSelect: false, selectionItems: null }
 ]
 
 const SecondDrawerListItems: DrawerListType = [
-  { text: "Food", icon: FastfoodIcon },
-  { text: "Workout Plans", icon: FormatListBulletedIcon },
-  { text: "Workout Exercises", icon: FitnessCenterIcon }
+  { text: "Food", icon: FastfoodIcon, containSearch: true, containSelect: false, selectionItems: null },
+  { text: "Workout Plans", icon: FormatListBulletedIcon, containSearch: true, containSelect: false, selectionItems: null },
+  {
+    text: "Workout Exercises", icon: FitnessCenterIcon, containSearch: true, containSelect: true,
+    selectionItems: { label: "Category", items: ["all", "push", "pull", "legs"] }
+  }
 ]
 
 const getListElement = (list: DrawerListType): React.ReactNode => {
-  const { setContent } = useSideDrawerStore();
+  const { setDrawerTab } = useSideDrawerStore();
   return (
     <List >
       {list.map((item) => (
-        <ListItem onClick={() => setContent(item.text)} key={item.text} disablePadding>
+        <ListItem onClick={() => {
+          setDrawerTab(item);
+        }
+        } key={item.text} disablePadding>
           <ListItemButton>
             <ListItemIcon>
               {<item.icon />}
