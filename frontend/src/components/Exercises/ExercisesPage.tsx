@@ -1,8 +1,7 @@
 import { Typography } from "@mui/material";
 import './Exercises.css';
-import React from "react";
-
 import ExerciseCategory from './ExerciseCategory';
+
 
 const categories: ExerciseCategory[] = [
     {
@@ -25,13 +24,16 @@ const categories: ExerciseCategory[] = [
 
 export default function ExercisesPage() {
     return (
-        <div>
+        <>
             <Typography fontSize={"22px"} fontFamily={"impact"} fontWeight={"bold"} marginTop={"0.2rem"}>
                 Exercises
             </Typography>
-            {categories.map((category) => (
-                <ExerciseCategory key={category.id} category={category} />
-            ))}
-        </div>
+            <div style={{ marginRight: "auto" }}>
+                {categories.map((category) => (
+                    <ExerciseCategory key={category.id} category={category} />
+                ))}
+            </div>
+
+        </>
     );
 }

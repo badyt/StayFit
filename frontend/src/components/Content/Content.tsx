@@ -35,9 +35,9 @@ const Content = () => {
                 </div>;
         }
     }
-    return (<div>
+    return (<>
         {getPickedContentComponent(pickedDrawerTab)}
-    </div>
+    </>
 
     );
 }
