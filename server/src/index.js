@@ -82,7 +82,15 @@ server.post('/refresh_token', async (req, res) => {
 
 server.get('/getAllFood', async (req, res) => {
     try {
-        await requestHandler.getAllFood(res);
+        await requestHandler.getAllDataInCollection(res, 'food');
+    } catch (error) {
+        res.send({ error: error.message });
+    }
+})
+
+server.get('/getAllExercises', async (req, res) => {
+    try {
+        await requestHandler.getAllDataInCollection(res, 'exercises');
     } catch (error) {
         res.send({ error: error.message });
     }

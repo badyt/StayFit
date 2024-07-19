@@ -1,0 +1,282 @@
+{
+  "id": 1,
+  "name": "Shoulder Exercises",
+  "exercises": [
+    { "id": 1, "name": "Shoulder Press", "image": "shoulder-press.jpg"
+    },
+    { "id": 2, "name": "Lateral Raise", "image": "lateral-raises.jpg"
+    },
+    { "id": 3, "name": "Arnold Press", "image": "arnold-press.jpg"
+    },
+    { "id": 4, "name": "Front Raises", "image": "front-raises.jpg"
+    },
+    { "id": 5, "name": "Reverse Fly", "image": "reverse-fly.jpg"
+    },
+    { "id": 6, "name": "Upright Row", "image": "upright-row.jpg"
+    },
+    { "id": 7, "name": "Face Pull", "image": "face-pull.jpg"
+    },
+    { "id": 8, "name": "Overhead Press", "image": "overhead-press.jpg"
+    },
+    { "id": 9, "name": "Cable Lateral Raises", "image": "cable-lateral-raises.jpg"
+    },
+    { "id": 10, "name": "Machine Shoulder Press", "image": "machine-shoulder-press.jpg"
+    }
+  ]
+}
+{
+  "id": 2,
+  "name": "Leg Exercises",
+  "exercises": [
+    { "id": 1, "name": "Squat", "image": "squat.jpg"
+    },
+    { "id": 2, "name": "Lunge", "image": "lunge.jpg"
+    }
+    { "id": 3, "name": "Leg Press", "image": "leg-press.jpg"
+    },
+    { "id": 4, "name": "Deadlift", "image": "deadlift.jpg"
+    },
+    { "id": 5, "name": "Leg Curl", "image": "leg-curl.jpg"
+    },
+    { "id": 6, "name": "Leg Extension", "image": "leg-extension.jpg"
+    },
+    { "id": 7, "name": "Calf Raise", "image": "calf-raise.jpg"
+    },
+    { "id": 8, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg"
+    },
+    { "id": 9, "name": "Step-Ups", "image": "step-ups.jpg"
+    },
+    { "id": 10, "name": "Hack Squat", "image": "hack-squat.jpg"
+    }
+  ]
+}
+{
+  "id": 3,
+  "name": "Chest Exercises",
+  "exercises": [
+    { "id": 1, "name": "Bench Press", "image": "bench-press.jpg"
+    },
+    { "id": 2, "name": "Incline Bench Press", "image": "incline-bench-press.jpg"
+    }
+    { "id": 3, "name": "Decline Bench Press", "image": "decline-bench-press.jpg"
+    },
+    { "id": 4, "name": "Chest Fly", "image": "chest-fly.jpg"
+    },
+    { "id": 5, "name": "Push-Ups", "image": "push-ups.jpg"
+    },
+    { "id": 6, "name": "Cable Crossovers", "image": "cable-crossovers.jpg"
+    },
+    { "id": 7, "name": "Chest Dips", "image": "chest-dips.jpg"
+    },
+    { "id": 8, "name": "Dumbbell Pullover", "image": "dumbbell-pullover.jpg"
+    },
+  ]
+}
+{
+  "id": 4,
+  "name": "Back Exercises",
+  "exercises": [
+    { "id": 1, "name": "Pull Ups", "image": "pull-ups.jpg"
+    },
+    { "id": 2, "name": "Lat Pulldown", "image": "lat-pulldown.jpg"
+    }
+    { "id": 3, "name": "Bent Over Row", "image": "ben-over-row.jpg"
+    },
+    { "id": 4, "name": "Deadlift", "image": "deadlift.jpg"
+    },
+    { "id": 5, "name": "Dumbbell Row", "image": "dumbbel-row.jpg"
+    },
+    { "id": 6, "name": "T Bar Row", "image": "t-bar-row.jpg"
+    },
+    { "id": 7, "name": "Seated Cable Row", "image": "seated-cable-row.jpg"
+    },
+    { "id": 8, "name": "Face Pull", "image": "face-pull.jpg"
+    },
+    { "id": 9, "name": "Back Extension", "image": "back-extension.jpg"
+    },
+    { "id": 10, "name": "Inverted Row", "image": "inverted-row.jpg"
+    }
+  ]
+}
+{
+  "id": 5,
+  "name": "Biceps Exercises",
+  "exercises": [
+    { "id": 1, "name": "Bicep Curl", "image": "bicep-curl.jpg"
+    },
+    { "id": 2, "name": "Hammer Curl", "image": "hammer-curl.jpg"
+    }
+    { "id": 3, "name": "Concentration Curl", "image": "concentraion-curl.jpg"
+    },
+    { "id": 4, "name": "Preacher Curl", "image": "preacher-curl.jpg"
+    },
+    { "id": 5, "name": "Cable Curl", "image": "cable-curl.jpg"
+    },
+    { "id": 6, "name": "Chin Ups", "image": "chin-ups.jpg"
+    },
+    { "id": 7, "name": "EZ Bar Curl", "image": "ez-bar-curl.jpg"
+    },
+    { "id": 8, "name": "Incline Dumbbell Curl", "image": "incline-dumbbel-curl.jpg"
+    },
+    { "id": 9, "name": "Spider Curl", "image": "spider-curl.jpg"
+    },
+    { "id": 10, "name": "Zottman Curl", "image": "zottman-curl.jpg"
+    }
+  ]
+}
+{
+  "id": 6,
+  "name": "Triceps Exercises",
+  "exercises": [
+    { "id": 1, "name": "Tricep Dips", "image": "tricep-dips.jpg"
+    },
+    { "id": 2, "name": "Tricep Pushdown", "image": "tricep-pushdown.jpg"
+    }
+    { "id": 3, "name": "Skull Crushers", "image": "skull-crushers.jpg"
+    },
+    { "id": 4, "name": "Close Grip Bench Press", "image": "close-grip-bench-press.jpg"
+    },
+    { "id": 5, "name": "Overhead Tricep Extension", "image": "overhead-tricep-extension.jpg"
+    },
+    { "id": 6, "name": "Kickbacks", "image": "kickbacks.jpg"
+    },
+    { "id": 7, "name": "Cable Overhead Extension", "image": "cable-overhead-extension.jpg"
+    },
+    { "id": 8, "name": "Dumbbell Tricep Extension", "image": "dumbbell-tricep-extension.jpg"
+    },
+    { "id": 9, "name": "Rope Pushdown", "image": "rope-pushdown.jpg"
+    },
+    { "id": 10, "name": "Diamond Push Ups", "image": "diamond-push-ups.jpg"
+    }
+  ]
+}
+{
+  "id": 7,
+  "name": "Abs Exercises",
+  "exercises": [
+    { "id": 1, "name": "Crunches", "image": "crunches.jpg"
+    },
+    { "id": 2, "name": "Leg Raises", "image": "leg-raises.jpg"
+    }
+    { "id": 3, "name": "Planks", "image": "planks.jpg"
+    },
+    { "id": 4, "name": "Russian Twists", "image": "russian-twists.jpg"
+    },
+    { "id": 5, "name": "Bicycle Crunches", "image": "bicycle-crunches.jpg"
+    },
+    { "id": 6, "name": "Mountain Climbers", "image": "mountain-climbers.jpg"
+    },
+    { "id": 7, "name": "Hanging Leg Raise", "image": "hanging-leg-raise.jpg"
+    },
+    { "id": 8, "name": "Ab Rollout", "image": "ab-rollout.jpg"
+    },
+    { "id": 9, "name": "Flutter Kicks", "image": "flutter-kicks.jpg"
+    },
+    { "id": 10, "name": "Side Plank", "image": "side-plank.jpg"
+    }
+  ]
+}
+{
+  "id": 8,
+  "name": "Glutes Exercises",
+  "exercises": [
+    { "id": 1, "name": "Hip Thrust", "image": "hip-thrust.jpg"
+    },
+    { "id": 2, "name": "Glute Bridge", "image": "glute-bridge.jpg"
+    }
+    { "id": 3, "name": "Squats", "image": "squats.jpg"
+    },
+    { "id": 4, "name": "Lunges", "image": "lunges.jpg"
+    },
+    { "id": 5, "name": "Deadlift", "image": "deadlift.jpg"
+    },
+    { "id": 6, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg"
+    },
+    { "id": 7, "name": "Cable Kickback", "image": "cable-kickback.jpg"
+    },
+    { "id": 8, "name": "Step-Ups", "image": "step-ups.jpg"
+    },
+    { "id": 9, "name": "Fire Hydrants", "image": "fire-hydrants.jpg"
+    },
+    { "id": 10, "name": "Single Leg Deadlift", "image": "single-leg-deadlift.jpg"
+    }
+  ]
+}
+{
+  "id": 9,
+  "name": "Hamstrings Exercises",
+  "exercises": [
+    { "id": 1, "name": "Deadlift", "image": "deadlift.jpg"
+    },
+    { "id": 2, "name": "Romanian Deadlift", "image": "romanian-deadlift.jpg"
+    }
+    { "id": 3, "name": "Leg Curl", "image": "leg-curl.jpg"
+    },
+    { "id": 4, "name": "Good Morning", "image": "good-morning.jpg"
+    },
+    { "id": 5, "name": "Glute Bridge", "image": "glute-bridge.jpg"
+    },
+    { "id": 6, "name": "Hip Thrust", "image": "hip-thrust.jpg"
+    },
+    { "id": 7, "name": "Kettlebell Swing", "image": "kettlebell-swing.jpg"
+    },
+    { "id": 8, "name": "Single Leg Deadlift", "image": "single-leg-deadlift.jpg"
+    },
+    { "id": 9, "name": "Lunges", "image": "lunges.jpg"
+    },
+    { "id": 10, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg"
+    }
+  ]
+}
+{
+  "id": 10,
+  "name": "Quadriceps Exercises",
+  "exercises": [
+    { "id": 1, "name": "Squats", "image": "squats.jpg"
+    },
+    { "id": 2, "name": "Leg Press", "image": "leg-press.jpg"
+    }
+    { "id": 3, "name": "Lunges", "image": "lunges.jpg"
+    },
+    { "id": 4, "name": "Leg Extension", "image": "leg-extension.jpg"
+    },
+    { "id": 5, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg"
+    },
+    { "id": 6, "name": "Step Ups", "image": "step-ups.jpg"
+    },
+    { "id": 7, "name": "Hack Squats", "image": "hack-squats.jpg"
+    },
+    { "id": 8, "name": "Front Squat", "image": "front-squat.jpg"
+    },
+    { "id": 9, "name": "Goblet Squat", "image": "goblet-squat.jpg"
+    },
+    { "id": 10, "name": "Wall Sit", "image": "wall-sit.jpg"
+    }
+  ]
+}
+{
+  "id": 11,
+  "name": "Calves Exercises",
+  "exercises": [
+    { "id": 1, "name": "Calf Raise", "image": "calf-raise.jpg"
+    },
+    { "id": 2, "name": "Seated Calf Raise", "image": "seated-calf-raise.jpg"
+    }
+    { "id": 3, "name": "Standing Calf Raise", "image": "standing-calf-raise.jpg"
+    },
+    { "id": 4, "name": "Donkey Calf Raise", "image": "donkey-calf-raise.jpg"
+    },
+    { "id": 5, "name": "Jump Rope", "image": "jump-rope.jpg"
+    },
+    { "id": 6, "name": "Box Jumps", "image": "box-jumps.jpg"
+    },
+    { "id": 7, "name": "Farmers Walk on Toes", "image": "farmers-walk-on-toes.jpg"
+    },
+    { "id": 8, "name": "Single Leg Calf Raise", "image": "single-leg-calf-raise.jpg"
+    },
+    { "id": 9, "name": "Tibialis Raise", "image": "tibialis raise.jpg"
+    },
+    { "id": 10, "name": "Calf Press", "image": "calf-press.jpg"
+    }
+  ]
+}

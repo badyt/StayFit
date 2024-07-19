@@ -4,7 +4,22 @@
 
   .exercise-row {
       display: flex;
-      overflow-x: auto;
+  }
+
+/* 
+  .scroll-container-wrapper {
+      display: flex;
+      position: relative;
+  } */
+
+
+  .scroll-container {
+      width: 100vw;
+      overflow-x: hidden;
+      /* display: flex; */
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      flex-grow: 1;
   }
 
   .exercise {
@@ -16,4 +31,26 @@
       width: 150px;
       height: 150px;
       object-fit: cover;
+  }
+
+  .scroll-arrow {
+    
+      /* transform: translateY(-8rem);  */
+      position: absolute;
+      display: inline;
+      color: black;
+      /* border: none; */
+      /* padding: 10px; */
+      cursor: pointer;
+      z-index: 1;
+  }
+
+  .scroll-arrow.left {
+      left: 0;
+      transform: translateY(6rem); 
+  }
+
+  .scroll-arrow.right {
+      right: 0;
+      transform: translateY(-8rem); 
   }

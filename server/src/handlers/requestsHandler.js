@@ -58,15 +58,14 @@ const refreshAccessToken = async (req, res) => {
    return res.send({ accessToken: accesstoken });
 }
 
-const getAllFood = async (res) => {
+const getAllDataInCollection = async (res, collectionName) => {
    try {
-      const result = await Database.find('food', {},  {_id: 0 });
+      const result = await Database.find(collectionName, {}, { _id: 0 });
       console.log(result);
       return res.send(result);
    } catch (err) {
-      throw Error('something went wrong fetching food data');
+      throw Error(`something went wrong fetching ${collectionName} data`);
    }
-
 }
 
-module.exports = { handleRegisteration, handleLogin, refreshAccessToken, getAllFood }
+module.exports = { handleRegisteration, handleLogin, refreshAccessToken, getAllDataInCollection }
