@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
 import './Exercises.css';
 interface CategoryProps {
     category: ExerciseCategory;
@@ -52,7 +51,6 @@ const ExerciseCategory: React.FC<CategoryProps> = ({ category }) => {
     return (
         <>
             <h2 style={{ display: "flex", marginLeft: "1rem" }}>{category.name}</h2>
-         
                 {showLeftArrow && <ArrowBackIosNewIcon className="scroll-arrow left" onClick={scrollLeft}/>}
                 <div id = "categoryContainer" className="scroll-container" ref={scrollContainerRef}>
                     <div className='exercise-row'>
@@ -62,8 +60,6 @@ const ExerciseCategory: React.FC<CategoryProps> = ({ category }) => {
                     </div>
                 </div>
                 {showRightArrow && <ArrowForwardIosIcon className="scroll-arrow right" onClick={scrollRight} />}
-           
-
         </>
     );
 };

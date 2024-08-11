@@ -1,5 +1,5 @@
-# CollabText
-Real-time Collaboration Platform
+# StayFit
+StayFit Workout App
 
 # Database
 - food collection:

@@ -25,6 +25,8 @@
   .exercise {
       margin: 10px;
       text-align: center;
+      border: 3px solid #237d63;
+      border-radius: 5px;
   }
 
   .exercise img {
