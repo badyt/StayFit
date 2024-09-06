@@ -2,6 +2,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MenuAppBar from './components/MenuAppBar';
 import Login from './components/Login/';
 import Register from './components/Register/';
@@ -10,6 +11,19 @@ import Content from './components/Content';
 import './App.css';
 import useLoginStore from './stores/loginstore';
 import useLoadingStore from './stores/loadingstore';
+
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1E1E2F',
+    },
+    text: {
+      primary: '#EAEAEA',
+    },
+  },
+});
+
 function App() {
   const { loading, setLoading } = useLoadingStore();
   const { setUser, checkRefreshToken } = useLoginStore();
@@ -34,17 +48,19 @@ function App() {
   return (
 
     <div className="app">
-      <ToastContainer />
-      <BrowserRouter>
-        <MenuAppBar />
-        <Routes>
-          <Route path="/" element={<Content />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          {/* <Route path="protected" element={<Protected />} /> */}
-        </Routes>
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
 
+        <ToastContainer />
+        <BrowserRouter>
+          <MenuAppBar />
+          <Routes>
+            <Route path="/" element={<Content />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            {/* <Route path="protected" element={<Protected />} /> */}
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
 
   );

@@ -6,17 +6,9 @@
       display: flex;
   }
 
-/* 
-  .scroll-container-wrapper {
-      display: flex;
-      position: relative;
-  } */
-
-
   .scroll-container {
       width: 100vw;
       overflow-x: hidden;
-      /* display: flex; */
       white-space: nowrap;
       scroll-behavior: smooth;
       flex-grow: 1;
@@ -25,8 +17,10 @@
   .exercise {
       margin: 10px;
       text-align: center;
-      border: 3px solid #237d63;
+      background-color: var(--secondary-bg-color);
+      border: 3px solid var(--border-color);
       border-radius: 5px;
+      cursor: pointer;
   }
 
   .exercise img {
@@ -36,13 +30,9 @@
   }
 
   .scroll-arrow {
-    
-      /* transform: translateY(-8rem);  */
       position: absolute;
       display: inline;
-      color: black;
-      /* border: none; */
-      /* padding: 10px; */
+      color: #EAEAEA;
       cursor: pointer;
       z-index: 1;
   }

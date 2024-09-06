@@ -2,25 +2,25 @@
   "id": 1,
   "name": "Shoulder Exercises",
   "exercises": [
-    { "id": 1, "name": "Shoulder Press", "image": "shoulder-press.jpg", "calories_burnt_per_set": 6
+    { "id": 1, "name": "Shoulder Press", "image": "shoulder-press.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Lateral Raise", "image": "lateral-raises.jpg", "calories_burnt_per_set": 5
+    { "id": 2, "name": "Lateral Raise", "image": "lateral-raises.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Arnold Press", "image": "arnold-press.jpg", "calories_burnt_per_set": 7
+    { "id": 3, "name": "Arnold Press", "image": "arnold-press.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Front Raises", "image": "front-raises.jpg", "calories_burnt_per_set": 5
+    { "id": 4, "name": "Front Raises", "image": "front-raises.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Reverse Fly", "image": "reverse-fly.jpg", "calories_burnt_per_set": 5
+    { "id": 5, "name": "Reverse Fly", "image": "reverse-fly.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Upright Row", "image": "upright-row.jpg", "calories_burnt_per_set": 6
+    { "id": 6, "name": "Upright Row", "image": "upright-row.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Face Pull", "image": "face-pull.jpg", "calories_burnt_per_set": 6
+    { "id": 7, "name": "Face Pull", "image": "face-pull.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Overhead Press", "image": "overhead-press.jpg", "calories_burnt_per_set": 6
+    { "id": 8, "name": "Overhead Press", "image": "overhead-press.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Cable Lateral Raises", "image": "cable-lateral-raises.jpg", "calories_burnt_per_set": 5
+    { "id": 9, "name": "Cable Lateral Raises", "image": "cable-lateral-raises.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 10, "name": "Machine Shoulder Press", "image": "machine-shoulder-press.jpg", "calories_burnt_per_set": 6
+    { "id": 10, "name": "Machine Shoulder Press", "image": "machine-shoulder-press.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -28,25 +28,25 @@
   "id": 2,
   "name": "Leg Exercises",
   "exercises": [
-    { "id": 1, "name": "Squat", "image": "squat.jpg", "calories_burnt_per_set": 8
+    { "id": 1, "name": "Squat", "image": "squat.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7
+    { "id": 2, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Leg Press", "image": "leg-press.jpg", "calories_burnt_per_set": 7
+    { "id": 3, "name": "Leg Press", "image": "leg-press.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 9
+    { "id": 4, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 9, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Leg Curl", "image": "leg-curl.jpg", "calories_burnt_per_set": 6
+    { "id": 5, "name": "Leg Curl", "image": "leg-curl.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Leg Extension", "image": "leg-extension.jpg", "calories_burnt_per_set": 6
+    { "id": 6, "name": "Leg Extension", "image": "leg-extension.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Calf Raise", "image": "calf-raise.jpg", "calories_burnt_per_set": 5
+    { "id": 7, "name": "Calf Raise", "image": "calf-raise.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 8
+    { "id": 8, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Step-Ups", "image": "step-ups.jpg", "calories_burnt_per_set": 7
+    { "id": 9, "name": "Step-Ups", "image": "step-ups.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 10, "name": "Hack Squat", "image": "hack-squat.jpg", "calories_burnt_per_set": 8
+    { "id": 10, "name": "Hack Squat", "image": "hack-squat.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -54,21 +54,21 @@
   "id": 3,
   "name": "Chest Exercises",
   "exercises": [
-    { "id": 1, "name": "Bench Press", "image": "bench-press.jpg", "calories_burnt_per_set": 7
+    { "id": 1, "name": "Bench Press", "image": "bench-press.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Incline Bench Press", "image": "incline-bench-press.jpg", "calories_burnt_per_set": 7
+    { "id": 2, "name": "Incline Bench Press", "image": "incline-bench-press.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Decline Bench Press", "image": "decline-bench-press.jpg", "calories_burnt_per_set": 7
+    { "id": 3, "name": "Decline Bench Press", "image": "decline-bench-press.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Chest Fly", "image": "chest-fly.jpg", "calories_burnt_per_set": 6
+    { "id": 4, "name": "Chest Fly", "image": "chest-fly.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Push-Ups", "image": "push-ups.jpg", "calories_burnt_per_set": 6
+    { "id": 5, "name": "Push-Ups", "image": "push-ups.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Cable Crossovers", "image": "cable-crossovers.jpg", "calories_burnt_per_set": 6
+    { "id": 6, "name": "Cable Crossovers", "image": "cable-crossovers.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Chest Dips", "image": "dips.jpg", "calories_burnt_per_set": 7
+    { "id": 7, "name": "Chest Dips", "image": "dips.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Dumbbell Pullover", "image": "dumbbell-pullover.jpg", "calories_burnt_per_set": 6
+    { "id": 8, "name": "Dumbbell Pullover", "image": "dumbbell-pullover.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -76,25 +76,25 @@
   "id": 4,
   "name": "Back Exercises",
   "exercises": [
-    { "id": 1, "name": "Pull Ups", "image": "pull-ups.jpg", "calories_burnt_per_set": 8
+    { "id": 1, "name": "Pull Ups", "image": "pull-ups.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Lat Pulldown", "image": "lat-pulldown.jpg", "calories_burnt_per_set": 7
+    { "id": 2, "name": "Lat Pulldown", "image": "lat-pulldown.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Bent Over Row", "image": "bent-over-row.jpg", "calories_burnt_per_set": 7
+    { "id": 3, "name": "Bent Over Row", "image": "bent-over-row.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 9
+    { "id": 4, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 9, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Dumbbell Row", "image": "dumbbell-row.jpg", "calories_burnt_per_set": 7
+    { "id": 5, "name": "Dumbbell Row", "image": "dumbbell-row.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "T Bar Row", "image": "t-bar-row.jpg", "calories_burnt_per_set": 7
+    { "id": 6, "name": "T Bar Row", "image": "t-bar-row.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Seated Cable Row", "image": "seated-cable-row.jpg", "calories_burnt_per_set": 6
+    { "id": 7, "name": "Seated Cable Row", "image": "seated-cable-row.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Face Pull", "image": "face-pull.jpg", "calories_burnt_per_set": 6
+    { "id": 8, "name": "Face Pull", "image": "face-pull.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Back Extension", "image": "back-extension.jpg", "calories_burnt_per_set": 6
+    { "id": 9, "name": "Back Extension", "image": "back-extension.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 10, "name": "Inverted Row", "image": "inverted-row.jpg", "calories_burnt_per_set": 6
+    { "id": 10, "name": "Inverted Row", "image": "inverted-row.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -102,25 +102,25 @@
   "id": 5,
   "name": "Biceps Exercises",
   "exercises": [
-    { "id": 1, "name": "Bicep Curl", "image": "bicep-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 1, "name": "Bicep Curl", "image": "bicep-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Hammer Curl", "image": "hammer-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 2, "name": "Hammer Curl", "image": "hammer-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Concentration Curl", "image": "concentration-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 3, "name": "Concentration Curl", "image": "concentration-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Preacher Curl", "image": "preacher-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 4, "name": "Preacher Curl", "image": "preacher-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Cable Curl", "image": "cable-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 5, "name": "Cable Curl", "image": "cable-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Chin Ups", "image": "chin-ups.jpg", "calories_burnt_per_set": 7
+    { "id": 6, "name": "Chin Ups", "image": "chin-ups.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "EZ Bar Curl", "image": "ez-bar-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 7, "name": "EZ Bar Curl", "image": "ez-bar-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Incline Dumbbell Curl", "image": "incline-dumbbell-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 8, "name": "Incline Dumbbell Curl", "image": "incline-dumbbell-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Spider Curl", "image": "spider-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 9, "name": "Spider Curl", "image": "spider-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 10, "name": "Zottman Curl", "image": "zottman-curl.jpg", "calories_burnt_per_set": 5
+    { "id": 10, "name": "Zottman Curl", "image": "zottman-curl.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -128,23 +128,23 @@
   "id": 6,
   "name": "Triceps Exercises",
   "exercises": [
-    { "id": 1, "name": "Tricep Dips", "image": "dips.jpg", "calories_burnt_per_set": 6
+    { "id": 1, "name": "Tricep Dips", "image": "dips.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Tricep Pushdown", "image": "tricep-pushdown.jpg", "calories_burnt_per_set": 6
+    { "id": 2, "name": "Tricep Pushdown", "image": "tricep-pushdown.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Skull Crushers", "image": "skull-crushers.jpg", "calories_burnt_per_set": 6
+    { "id": 3, "name": "Skull Crushers", "image": "skull-crushers.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Close Grip Bench Press", "image": "close-grip-bench-press.jpg", "calories_burnt_per_set": 7
+    { "id": 4, "name": "Close Grip Bench Press", "image": "close-grip-bench-press.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Overhead Tricep Extension", "image": "overhead-tricep-extension.jpg", "calories_burnt_per_set": 6
+    { "id": 5, "name": "Overhead Tricep Extension", "image": "overhead-tricep-extension.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Kickbacks", "image": "tricep-kickbacks.jpg", "calories_burnt_per_set": 5
+    { "id": 6, "name": "Kickbacks", "image": "tricep-kickbacks.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Dumbbell Tricep Extension", "image": "dumbbell-tricep-extension.jpg", "calories_burnt_per_set": 6
+    { "id": 7, "name": "Dumbbell Tricep Extension", "image": "dumbbell-tricep-extension.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Rope Pushdown", "image": "rope-pushdown.jpg", "calories_burnt_per_set": 6
+    { "id": 8, "name": "Rope Pushdown", "image": "rope-pushdown.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Diamond Push Ups", "image": "diamond-push-ups.jpg", "calories_burnt_per_set": 6
+    { "id": 9, "name": "Diamond Push Ups", "image": "diamond-push-ups.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -152,19 +152,19 @@
   "id": 7,
   "name": "Abs Exercises",
   "exercises": [
-    { "id": 1, "name": "Crunches", "image": "crunches.jpg", "calories_burnt_per_set": 4
+    { "id": 1, "name": "Crunches", "image": "crunches.jpg", "calories_burnt_per_set": 4, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Leg Raises", "image": "leg-raises.jpg", "calories_burnt_per_set": 5
+    { "id": 2, "name": "Leg Raises", "image": "leg-raises.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Russian Twists", "image": "russian-twists.jpg", "calories_burnt_per_set": 5
+    { "id": 3, "name": "Russian Twists", "image": "russian-twists.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Mountain Climbers", "image": "mountain-climbers.jpg", "calories_burnt_per_set": 5
+    { "id": 4, "name": "Mountain Climbers", "image": "mountain-climbers.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Hanging Leg Raise", "image": "hanging-leg-raise.jpg", "calories_burnt_per_set": 6
+    { "id": 5, "name": "Hanging Leg Raise", "image": "hanging-leg-raise.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Ab Rollout", "image": "ab-rollout.jpg", "calories_burnt_per_set": 6
+    { "id": 6, "name": "Ab Rollout", "image": "ab-rollout.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Flutter Kicks", "image": "flutter-kicks.jpg", "calories_burnt_per_set": 4
+    { "id": 7, "name": "Flutter Kicks", "image": "flutter-kicks.jpg", "calories_burnt_per_set": 4, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -172,23 +172,23 @@
   "id": 8,
   "name": "Glutes Exercises",
   "exercises": [
-    { "id": 1, "name": "Hip Thrust", "image": "hip-thrust.jpg", "calories_burnt_per_set": 7
+    { "id": 1, "name": "Hip Thrust", "image": "hip-thrust.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Glute Bridge", "image": "glute-bridge.jpg", "calories_burnt_per_set": 6
+    { "id": 2, "name": "Glute Bridge", "image": "glute-bridge.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Squat", "image": "squat.jpg", "calories_burnt_per_set": 8
+    { "id": 3, "name": "Squat", "image": "squat.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7
+    { "id": 4, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 8
+    { "id": 5, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 7
+    { "id": 6, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Cable Kickback", "image": "cable-kickback.jpg", "calories_burnt_per_set": 5
+    { "id": 7, "name": "Cable Kickback", "image": "cable-kickback.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Step-Ups", "image": "step-ups.jpg", "calories_burnt_per_set": 6
+    { "id": 8, "name": "Step-Ups", "image": "step-ups.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Single Leg Deadlift", "image": "single-leg-deadlift.jpg", "calories_burnt_per_set": 7
+    { "id": 9, "name": "Single Leg Deadlift", "image": "single-leg-deadlift.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -196,23 +196,23 @@
   "id": 9,
   "name": "Hamstrings Exercises",
   "exercises": [
-    { "id": 1, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 8
+    { "id": 1, "name": "Deadlift", "image": "deadlift.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Romanian Deadlift", "image": "romanian-deadlift.jpg", "calories_burnt_per_set": 7
+    { "id": 2, "name": "Romanian Deadlift", "image": "romanian-deadlift.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Leg Curl", "image": "leg-curl.jpg", "calories_burnt_per_set": 6
+    { "id": 3, "name": "Leg Curl", "image": "leg-curl.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Good Morning", "image": "good-morning.jpg", "calories_burnt_per_set": 6
+    { "id": 4, "name": "Good Morning", "image": "good-morning.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Glute Bridge", "image": "glute-bridge.jpg", "calories_burnt_per_set": 6
+    { "id": 5, "name": "Glute Bridge", "image": "glute-bridge.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Hip Thrust", "image": "hip-thrust.jpg", "calories_burnt_per_set": 7
+    { "id": 6, "name": "Hip Thrust", "image": "hip-thrust.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Single Leg Deadlift", "image": "single-leg-deadlift.jpg", "calories_burnt_per_set": 7
+    { "id": 7, "name": "Single Leg Deadlift", "image": "single-leg-deadlift.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7
+    { "id": 8, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 7
+    { "id": 9, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -220,23 +220,23 @@
   "id": 10,
   "name": "Quadriceps Exercises",
   "exercises": [
-    { "id": 1, "name": "Squat", "image": "squat.jpg", "calories_burnt_per_set": 8
+    { "id": 1, "name": "Squat", "image": "squat.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Leg Press", "image": "leg-press.jpg", "calories_burnt_per_set": 7
+    { "id": 2, "name": "Leg Press", "image": "leg-press.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7
+    { "id": 3, "name": "Lunge", "image": "lunge.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Leg Extension", "image": "leg-extension.jpg", "calories_burnt_per_set": 6
+    { "id": 4, "name": "Leg Extension", "image": "leg-extension.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 7
+    { "id": 5, "name": "Bulgarian Split Squat", "image": "bulgarian-split-squat.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 6, "name": "Step Ups", "image": "step-ups.jpg", "calories_burnt_per_set": 7
+    { "id": 6, "name": "Step Ups", "image": "step-ups.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 7, "name": "Hack Squat", "image": "hack-squat.jpg", "calories_burnt_per_set": 8
+    { "id": 7, "name": "Hack Squat", "image": "hack-squat.jpg", "calories_burnt_per_set": 8, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 8, "name": "Front Squat", "image": "front-squat.jpg", "calories_burnt_per_set": 7
+    { "id": 8, "name": "Front Squat", "image": "front-squat.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 9, "name": "Goblet Squat", "image": "goblet-squat.jpg", "calories_burnt_per_set": 7
+    { "id": 9, "name": "Goblet Squat", "image": "goblet-squat.jpg", "calories_burnt_per_set": 7, "description": "cool exercise to be done every day of the week"
     }
   ]
 }
@@ -244,15 +244,15 @@
   "id": 11,
   "name": "Calves Exercises",
   "exercises": [
-    { "id": 1, "name": "Calf Raise", "image": "calf-raise.jpg", "calories_burnt_per_set": 6
+    { "id": 1, "name": "Calf Raise", "image": "calf-raise.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 2, "name": "Seated Calf Raise", "image": "seated-calf-raise.jpg", "calories_burnt_per_set": 5
+    { "id": 2, "name": "Seated Calf Raise", "image": "seated-calf-raise.jpg", "calories_burnt_per_set": 5, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 3, "name": "Donkey Calf Raise", "image": "donkey-calf-raise.jpg", "calories_burnt_per_set": 6
+    { "id": 3, "name": "Donkey Calf Raise", "image": "donkey-calf-raise.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 4, "name": "Single Leg Calf Raise", "image": "single-leg-calf-raise.jpg", "calories_burnt_per_set": 6
+    { "id": 4, "name": "Single Leg Calf Raise", "image": "single-leg-calf-raise.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     },
-    { "id": 5, "name": "Sled Press Calf Raise", "image": "sled-press-calf-raise.jpg", "calories_burnt_per_set": 6
+    { "id": 5, "name": "Sled Press Calf Raise", "image": "sled-press-calf-raise.jpg", "calories_burnt_per_set": 6, "description": "cool exercise to be done every day of the week"
     }
   ]
 }

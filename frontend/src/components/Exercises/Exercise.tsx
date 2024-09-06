@@ -2,7 +2,7 @@ import React from 'react';
 interface ExerciseProps {
   exercise: Exercise;
 }
-const imagesUrl = '../../../images/Exercises'
+const imagesUrl = '../../../images/Exercises';
 const Exercise: React.FC<ExerciseProps> = ({ exercise }) => {
   return (
     <div className="exercise">

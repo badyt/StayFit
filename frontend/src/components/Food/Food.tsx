@@ -70,7 +70,7 @@ export default function FoodComponent() {
     return (
         <div className='food-wrapper'>
             <Typography fontSize={"28px"}
-                    fontFamily={"serif"}
+                    fontFamily={"Garamond"}
                     fontWeight={"bold"} 
                     marginBottom={"1rem"}>Food Menu</Typography>
             <Box sx={{ height: 500, width: '100%' }}>

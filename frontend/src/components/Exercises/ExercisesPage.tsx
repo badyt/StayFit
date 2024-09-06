@@ -31,7 +31,7 @@ export default function ExercisesPage() {
 
     return (
         <>
-            <Typography fontSize={"22px"} fontFamily={"impact"} fontWeight={"bold"} marginTop={"0.2rem"}>
+            <Typography fontSize={"22px"} fontFamily={"Garamond"} fontWeight={"bold"} marginTop={"0.2rem"}>
                 Exercises
             </Typography>
             <div style={{ marginRight: "auto" }}>
