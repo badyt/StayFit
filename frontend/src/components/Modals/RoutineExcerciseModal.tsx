@@ -29,9 +29,13 @@ const RoutineExerciseModal: React.FC<ModalProps> = ({ title, image, description,
       <div className="modal-container" ref={modalRef}>
         <button className="modal-close-button" onClick={onClose}>×</button>
         <h2 className="modal-title">{title}</h2>
-        <img src={`${imagesUrl}/${image}`} alt={title} className="modal-image" />
-        <h3 style={{margin: 0}}>Description</h3>
-        <p className="modal-description">{description}</p>
+        <div className="modal-content">
+          <img src={`${imagesUrl}/${image}`} alt={title} className="modal-image" />
+          <div className="modal-description-container">
+            <h3>Description</h3>
+            <p className="modal-description">{description}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

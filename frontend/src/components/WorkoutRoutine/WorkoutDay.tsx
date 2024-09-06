@@ -14,7 +14,7 @@ interface DayProps {
   onExerciseClick: (exercise: Exercise) => void;
 }
 
-const WorkoutDay: React.FC<DayProps> = ({ title, exercises, onExerciseClick  }) => {
+const WorkoutDay: React.FC<DayProps> = ({ title, exercises, onExerciseClick }) => {
   return (
     <div className="day-container">
       <h2 className="day-title">{title}</h2>
@@ -25,7 +25,14 @@ const WorkoutDay: React.FC<DayProps> = ({ title, exercises, onExerciseClick  }) 
               className="exercise-button"
               onClick={() => onExerciseClick(exerciseRow.exercise)}
             >
-              {index+1}. Exercise: {exerciseRow.exercise.name}, Reps: {exerciseRow.reps}, Weight: {exerciseRow.weight}kg, Sets: {exerciseRow.sets}
+              <div className="exercise-content">
+                <span className="exercise-name">{index + 1}. {exerciseRow.exercise.name}</span>
+                <div className="exercise-details">
+                  <span className="exercise-sets">Sets: {exerciseRow.sets}</span>
+                  <span className="exercise-reps">Reps: {exerciseRow.reps}</span>
+                  <span className="exercise-weight">Weight: {exerciseRow.weight}kg</span>
+                </div>
+              </div>
             </button>
           </li>
         ))}

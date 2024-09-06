@@ -1,64 +1,100 @@
-/* styles.css */
+/* RoutineExerciseModal.css */
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensures it's above other content */
+}
+
+.modal-container {
+  background-color: var(--secondary-bg-color);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+  position: relative;
+  animation: fadeIn 0.3s ease; /* Add subtle fade-in effect */
+}
+
+.modal-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary-text-color); /* Ensure the text color contrasts the background */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-image {
+  width: 60%; 
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for the image */
+}
+
+.modal-description-container {
+  text-align: left;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.modal-description-container h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--primary-text-color);
+}
+
+.modal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--secondary-text-color); /* A lighter text color for the description */
+  padding-bottom: 20px; /* Added space at the bottom */
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ff5c5c; /* More visible color */
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.modal-close-button:hover {
+  background-color: #e04848; /* Slight hover effect */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
-  
-  .modal-container {
-    background-color: var(--secondary-bg-color);
-    border-radius: 12px;
-    padding: 10px;
-    max-width: 500px;
-    width: 90%;
-    box-shadow: 0 4px 12px val(--shadow-color);
-    position: relative;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .modal-title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    margin-top: 10px;
-  }
-  
-  .modal-image {
-    width: 60%; 
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .modal-description {
-    margin: 0.2rem;
-    font-size: 1.1rem;
-    color: var(--primary-text-color)
-  }
-  
-  .modal-close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: var(--secondary-bg-color); /* Your custom background color */
-    color: var(--primary-text-color); /* Your custom text color */
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .modal-close-button:hover {
-    background-color: #810202; /* Optional hover effect */
-    color: #fff; /* Optional hover text color */
-  }
+}

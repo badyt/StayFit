@@ -37,27 +37,61 @@
 }
 
 .exercise-button {
-  background-color: var(--button-bg-color); /* Muted blue that contrasts but is not too light */
+  background-color: var(--button-bg-color); /* Muted blue */
   color: var(--primary-text-color);
-  border: none; /* Remove default button border */
-  border-radius: 10px; /* Rounded corners */
+  border: none;
+  border-radius: 10px;
   padding: 12px 16px;
-  width: 100%; /* Full width of the container */
+  width: 100%;
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(58, 110, 165, 0.3); /* Softer shadow for subtle depth */
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 3px 8px rgba(58, 110, 165, 0.3);
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .exercise-button:hover {
-  background-color: var(--button-hover-bg-color); /* Slightly darker blue on hover */
-  transform: translateY(-3px); /* Slight elevation effect on hover */
-  box-shadow: 0 6px 12px rgba(58, 110, 165, 0.5); /* Larger shadow on hover */
+  background-color: var(--button-hover-bg-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(58, 110, 165, 0.5);
 }
 
 .exercise-button:active {
-  transform: translateY(0); /* Reset transform on click */
-  box-shadow: 0 3px 8px rgba(58, 110, 165, 0.3); /* Reset shadow on click */
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(58, 110, 165, 0.3);
+}
+
+.exercise-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.exercise-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--primary-text-color);
+  margin-bottom: 5px;
+}
+
+.exercise-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--primary-text-color);
+}
+
+.exercise-details span {
+  margin-right: 10px;
+}
+
+.exercise-reps,
+.exercise-weight,
+.exercise-sets {
+  background-color: var(--details-bg-color);
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
 /* Responsive styling for smaller screens */
