@@ -1,6 +1,6 @@
 // Modal.tsx
 import React, { useEffect, useRef } from "react";
-import "./RoutineExerciseModal.css"
+import "./ExerciseModal.css"
 interface ModalProps {
   title: string;
   image: string;

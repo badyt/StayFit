@@ -32,10 +32,15 @@
   .scroll-arrow {
       position: absolute;
       display: inline;
-      color: #EAEAEA;
+      color: var(--primary-bg-color);
+      background-color: var(--button-bg-color);
+      border-radius: 9px;
       cursor: pointer;
       z-index: 1;
   }
+  .scroll-arrow:hover{
+    background-color: var(--button-hover-bg-color);
+}
 
   .scroll-arrow.left {
       left: 0;

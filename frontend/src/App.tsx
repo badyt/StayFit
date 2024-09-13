@@ -31,8 +31,12 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await checkRefreshToken(); // Wait for the promise to resolve
-        setUser({ accessToken: result.accessToken });
+        const user = await checkRefreshToken(); // Wait for the promise to resolve
+        if (user.accessToken) {
+          setUser(user);
+        }
+        console.log(user.userId);
+        
       } catch (err) {
         toast.error('Error while refreshing token!');
       } finally {

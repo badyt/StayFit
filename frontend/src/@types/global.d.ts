@@ -10,8 +10,15 @@ declare global {
     }
 
     interface User {
+        userId: string;
         accessToken: string | null;
     }
+
+    interface DecodedToken {
+        userId: string;
+        iat: number;
+        exp: number;
+      }
 
     interface DrawerTab {
         text: string,

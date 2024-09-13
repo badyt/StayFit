@@ -7,9 +7,11 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './Exercises.css';
 interface CategoryProps {
     category: ExerciseCategory;
+    onExerciseClick: (exercise: Exercise) => void;
+
 }
 
-const ExerciseCategory: React.FC<CategoryProps> = ({ category }) => {
+const ExerciseCategory: React.FC<CategoryProps> = ({ category, onExerciseClick }) => {
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -51,15 +53,15 @@ const ExerciseCategory: React.FC<CategoryProps> = ({ category }) => {
     return (
         <>
             <h2 style={{ display: "flex", marginLeft: "1rem" }}>{category.name}</h2>
-                {showLeftArrow && <ArrowBackIosNewIcon className="scroll-arrow left" onClick={scrollLeft}/>}
-                <div id = "categoryContainer" className="scroll-container" ref={scrollContainerRef}>
-                    <div className='exercise-row'>
-                        {category.exercises.map((exercise) => (
-                            <Exercise key={exercise.id} exercise={exercise} />
-                        ))}
-                    </div>
+            {showLeftArrow && <ArrowBackIosNewIcon className="scroll-arrow left" onClick={scrollLeft} />}
+            <div id="categoryContainer" className="scroll-container" ref={scrollContainerRef}>
+                <div className='exercise-row'>
+                    {category.exercises.map((exercise) => (
+                        <Exercise key={exercise.id} exercise={exercise} onExerciseClick={onExerciseClick} />
+                    ))}
                 </div>
-                {showRightArrow && <ArrowForwardIosIcon className="scroll-arrow right" onClick={scrollRight} />}
+            </div>
+            {showRightArrow && <ArrowForwardIosIcon className="scroll-arrow right" onClick={scrollRight} />}
         </>
     );
 };

@@ -38,7 +38,7 @@
 }
 
 .modal-image {
-  width: 60%; 
+  width: 50%; 
   height: auto;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -86,6 +86,52 @@
 
 .modal-close-button:hover {
   background-color: #e04848; /* Slight hover effect */
+}
+
+.modal-add-section {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--primary-text-color);
+}
+
+.input-group input,
+.input-group select {
+  width: 30%;
+  padding: 8px;
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.input-group select{
+  width: 8rem;
+  margin-right: 1rem;
+}
+
+.modal-add-button {
+  padding: 12px;
+  background-color: var(--button-bg-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-add-button:hover {
+  background-color: var(--button-hover-bg-color);
 }
 
 @keyframes fadeIn {

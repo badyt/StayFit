@@ -13,14 +13,15 @@ const Login = () => {
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            const accesstoken = await login(credentials);
-            if (accesstoken) {
+            const user = await login(credentials);
+            if (user.accessToken) {
                 setUser({
-                    accessToken: accesstoken
+                    ...user
                 });
+                console.log(user.userId);
                 navigate('/');
                 // Store tokens in local storage
-                localStorage.setItem('accessToken', accesstoken);
+                localStorage.setItem('accessToken', user.accessToken);
             }
             else {
                 toast.error("Login Failed!")

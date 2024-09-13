@@ -44,7 +44,7 @@ const workoutData = [
           calories_burnt_per_set: 7,
           description: "cool exercise to be done every day of the week"
         }, reps: 15, weight: 0, sets: 3
-      }, 
+      },
     ],
   },
   {
@@ -123,13 +123,13 @@ const WorkoutRoutinePage: React.FC = () => {
           <WorkoutDay key={index} title={day.title} exercises={day.exercises} onExerciseClick={handleExerciseClick} />
         ))}
         {selectedExercise && (
-        <RoutineExerciseModal
-          title={selectedExercise.name}
-          image={selectedExercise.image}
-          description={selectedExercise.description}
-          onClose={handleCloseModal}
-        />
-      )}
+          <RoutineExerciseModal
+            title={selectedExercise.name}
+            image={selectedExercise.image}
+            description={selectedExercise.description}
+            onClose={handleCloseModal}
+          />
+        )}
       </div>
     </>
   );
