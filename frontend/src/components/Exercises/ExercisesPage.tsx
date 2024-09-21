@@ -29,7 +29,7 @@ export default function ExercisesPage() {
             const data = await response.json();
             setExercisesData(data);
         } catch (error) {
-            console.error('Error fetching food data:', error);
+            console.error('Error fetching exercises data:', error);
         }
     };
 

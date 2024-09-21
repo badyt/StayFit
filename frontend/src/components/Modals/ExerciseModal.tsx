@@ -1,6 +1,12 @@
 // Modal.tsx
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./ExerciseModal.css"
+import config from "../../../config";
+import useLoginStore from "../../stores/loginstore";
+import { toast } from "react-toastify";
+import useRoutineStore from "../../stores/routinestore";
+
+const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 interface ModalProps {
   exercise: Exercise;
   onClose: () => void;
@@ -8,15 +14,39 @@ interface ModalProps {
 const imagesUrl = '../../../images/Exercises';
 const ExerciseModal: React.FC<ModalProps> = ({ exercise, onClose }) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const { user } = useLoginStore();
+  const { fetchRoutineData } = useRoutineStore();
   const [sets, setSets] = useState<number | ''>('');
   const [reps, setReps] = useState<number | ''>('');
   const [weight, setWeight] = useState<number | ''>('');
   const [selectedDay, setSelectedDay] = useState<string>('');
 
-  const handleAdd = () => {
+  const handleAdd = async () => {
     if (sets && reps && weight && selectedDay) {
-      // Logic to handle the "Add" functionality
-      console.log(`Added ${exercise.name} with ${sets} sets, ${reps} reps, ${weight}kg on ${selectedDay}`);
+      try {
+        const response = await (await fetch(`${url}/addExerciseToRoutine`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userId: user?.userId,
+            day: selectedDay,
+            exercise: exercise,
+            sets: sets,
+            reps: reps,
+            weight: weight
+          })
+        })).json();
+        if (response.error) {
+          toast.error(`${response.error}`)
+        } else {
+          fetchRoutineData(user?.userId)
+          toast.info("successfully added exercise to routine");
+        }
+      } catch (error) {
+        console.error('Error Adding Exercise to Routine:', error);
+      }
       onClose(); // Close the modal after adding
     } else {
       alert("Please fill in all fields!");
@@ -49,7 +79,7 @@ const ExerciseModal: React.FC<ModalProps> = ({ exercise, onClose }) => {
           </div>
           {/* <h3>Add Workout Details</h3> */}
           <div className="modal-add-section">
-            
+
             <div className="input-group">
               <label htmlFor="sets">Sets</label>
               <input
@@ -84,7 +114,7 @@ const ExerciseModal: React.FC<ModalProps> = ({ exercise, onClose }) => {
               />
             </div>
             <div className="input-group">
-              <label htmlFor="day" style={{marginRight: "1rem"}}>Day</label>
+              <label htmlFor="day" style={{ marginRight: "1rem" }}>Day</label>
               <select
                 id="day"
                 value={selectedDay}
@@ -102,8 +132,8 @@ const ExerciseModal: React.FC<ModalProps> = ({ exercise, onClose }) => {
             </div>
           </div>
           <button className="modal-add-button" onClick={handleAdd}>
-              Add to Exercise
-            </button>
+            Add to Routine
+          </button>
         </div>
       </div>
     </div>

@@ -20,7 +20,6 @@ const ExerciseCategory: React.FC<CategoryProps> = ({ category, onExerciseClick }
         const handleScroll = () => {
             if (scrollContainerRef.current) {
                 const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-                console.log(scrollLeft, scrollWidth, clientWidth);
                 setShowLeftArrow(scrollLeft > 0);
                 setShowRightArrow(Math.round(scrollLeft) + clientWidth < scrollWidth);
             }

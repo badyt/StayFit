@@ -35,8 +35,6 @@ function App() {
         if (user.accessToken) {
           setUser(user);
         }
-        console.log(user.userId);
-        
       } catch (err) {
         toast.error('Error while refreshing token!');
       } finally {

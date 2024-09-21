@@ -9,7 +9,6 @@ services:
       - MONGO_DB_USERNAME=root
       - MONGO_DB_PWD=example
       - PORT=4000
-      - EMAILS_COLLECTION=emails
 
   mongodb:
     image: mongo

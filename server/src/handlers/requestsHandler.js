@@ -1,12 +1,12 @@
 const Database = require('../database/my-database');
 const { hash, compare } = require('bcryptjs');
 const { verify } = require('jsonwebtoken');
-const { ObjectId } = require('mongodb');
+const {Emails_Collection} = require('../globals.js')
 const { createAccessToken,
    createRefreshToken,
    sendAccessToken,
    sendRefreshToken } = require('./tokens.js');
-const Emails_Collection = process.env.EMAILS_COLLECTION;
+const { ObjectId } = require('mongodb');
 
 //handle register client request
 const handleRegisteration = async (email, password) => {
@@ -26,11 +26,11 @@ const handleLogin = async (req, res, email, password) => {
    if (!user) throw new Error('User does not exist!');
    const valid = await compare(password, user.password);
    if (!valid) throw new Error('Password is incorrect!');
-   const accesstoken = createAccessToken(user.email);
-   const refreshtoken = createRefreshToken(user.email);
+   const accesstoken = createAccessToken(user._id);
+   const refreshtoken = createRefreshToken(user._id);
    sendRefreshToken(res, refreshtoken);
    sendAccessToken(req, res, accesstoken);
-   Database.updateOne(Emails_Collection, { email: user.email }, { refreshtoken: refreshtoken });
+   Database.updateOne(Emails_Collection, { _id: user._id }, { refreshtoken: refreshtoken });
    return true;
 }
 
@@ -38,34 +38,35 @@ const handleLogin = async (req, res, email, password) => {
 const refreshAccessToken = async (req, res) => {
    const token = req.cookies.refreshtoken;
    if (!token) {
-      return res.send({ accesstoken: '' });
+      return res.send({ accessToken: '' });
    }
    let payload = null;
    try {
       payload = verify(token, process.env.REFRESH_TOKEN_SECRET);
    } catch (err) {
-      return res.send({ accesstoken: '' });
+      return res.send({ accessToken: '' });
    }
-   const user = await Database.findOne(Emails_Collection, { email: payload.userId });
-
+   const userId = ObjectId.createFromHexString(payload.userId);
+   const user = await Database.findOne(Emails_Collection, { _id: userId });
    if (!user || user.refreshtoken !== token) {
-      return res.send({ accesstoken: '' });
+      return res.send({ accessToken: '' });
    }
-   const accesstoken = createAccessToken(user.email);
-   const refreshtoken = createRefreshToken(user.email);
+   const accesstoken = createAccessToken(user._id);
+   const refreshtoken = createRefreshToken(user._id);
    sendRefreshToken(res, refreshtoken);
-   Database.updateOne(Emails_Collection, { email: user.email }, { refreshtoken: refreshtoken });
+   Database.updateOne(Emails_Collection, { _id: user._id }, { refreshtoken: refreshtoken });
    return res.send({ accessToken: accesstoken });
 }
 
 const getAllDataInCollection = async (res, collectionName) => {
    try {
       const result = await Database.find(collectionName, {}, { _id: 0 });
-      console.log(result);
       return res.send(result);
    } catch (err) {
       throw Error(`something went wrong fetching ${collectionName} data`);
    }
 }
+
+
 
 module.exports = { handleRegisteration, handleLogin, refreshAccessToken, getAllDataInCollection }

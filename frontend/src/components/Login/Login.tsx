@@ -14,17 +14,16 @@ const Login = () => {
         e.preventDefault();
         try {
             const user = await login(credentials);
-            if (user.accessToken) {
+            if (user?.accessToken) {
                 setUser({
                     ...user
                 });
-                console.log(user.userId);
                 navigate('/');
                 // Store tokens in local storage
                 localStorage.setItem('accessToken', user.accessToken);
             }
             else {
-                toast.error("Login Failed!")
+                toast.error("Login Failed! \n check if the username and password are inserted correctly")
             }
         } catch (err: unknown) {
             if (err instanceof Error) {

@@ -39,7 +39,6 @@ const useLoginStore = create<LoginStore>((set) => ({
     }
 
     const data = await response.json();
-    console.log("response " + data.accesstoken);
     if (data.accesstoken) {
       const decodedToken = jwtDecode<DecodedToken>(data.accesstoken);
       return {accessToken: data.accesstoken, userId: decodedToken.userId}
@@ -71,8 +70,8 @@ const useLoginStore = create<LoginStore>((set) => ({
         'Content-Type': 'application/json',
       }
     })).json();
-    const decodedToken = jwtDecode<DecodedToken>(result.accessToken);
-    return {accessToken: result.accesstoken, userId: decodedToken.userId}
+    const decodedToken = (result.accessToken.length > 0 ) ? jwtDecode<DecodedToken>(result.accessToken): null;
+    return {accessToken: result.accessToken, userId: (decodedToken) ? decodedToken.userId : decodedToken}
   }
 }));
 

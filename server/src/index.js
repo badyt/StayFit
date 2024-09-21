@@ -4,8 +4,9 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const Database = require('./database/my-database');
 const requestHandler = require('./handlers/requestsHandler');
+const routineHandler = require('./handlers/routineHandler');
 const { isAuth } = require('./handlers/isAuth');
-
+const { Food_Collection, Exercises_Collection } = require('./globals')
 const server = express();
 
 server.use(cookieParser());
@@ -82,7 +83,7 @@ server.post('/refresh_token', async (req, res) => {
 
 server.get('/getAllFood', async (req, res) => {
     try {
-        await requestHandler.getAllDataInCollection(res, 'food');
+        await requestHandler.getAllDataInCollection(res, Food_Collection);
     } catch (error) {
         res.send({ error: error.message });
     }
@@ -90,10 +91,28 @@ server.get('/getAllFood', async (req, res) => {
 
 server.get('/getAllExercises', async (req, res) => {
     try {
-        await requestHandler.getAllDataInCollection(res, 'exercises');
+        await requestHandler.getAllDataInCollection(res, Exercises_Collection);
     } catch (error) {
         res.send({ error: error.message });
     }
 })
 
+server.post('/addExerciseToRoutine', async (req, res) => {
+    try {
+        let didSucceed = await routineHandler.addExerciseToRoutine(req)
+        res.send(didSucceed)
+    } catch (error) {
+        res.send({ error: error.message });
+    }
+})
+
+server.get('/getUserRoutine', async (req, res) => {
+    try {
+        const userId = req.query.userId; 
+        let routine = await routineHandler.getUserRoutine(userId);
+        res.send({ data: routine })
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
 Initialize();

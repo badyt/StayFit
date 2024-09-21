@@ -10,7 +10,7 @@ declare global {
     }
 
     interface User {
-        userId: string;
+        userId: string | null;
         accessToken: string | null;
     }
 
@@ -37,7 +37,24 @@ declare global {
         id: number;
         name: string;
         image: string;
+        calories_burnt_per_set: number;
         description: string;
+    }
+
+    export interface RoutineExercise{
+        id: number;
+        name: string;
+        image: string;
+        calories_burnt_per_set: number;
+        description: string;
+        sets: number;
+        reps: number;
+        weight: number;
+    }
+
+    export interface RoutineDay{
+        day: string;
+        exercises: RoutineExercise[];
     }
 
     export interface ExerciseCategory {

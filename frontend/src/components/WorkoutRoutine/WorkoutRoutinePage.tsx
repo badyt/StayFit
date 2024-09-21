@@ -1,11 +1,14 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import WorkoutDay from "./WorkoutDay";
 import { Typography } from "@mui/material";
 import "./WorkoutRoutine.css"
 import { useState } from "react";
 import RoutineExerciseModal from "../Modals/RoutineExcerciseModal";
-
+import useRoutineStore from "../../stores/routinestore";
+import config from "../../../config";
+import useLoginStore from "../../stores/loginstore";
+const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 const workoutData = [
   {
     title: "Monday",
@@ -105,22 +108,33 @@ const workoutData = [
 
 const WorkoutRoutinePage: React.FC = () => {
   const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
-
-  const handleExerciseClick = (exercise: Exercise) => {
+  const { workoutRoutine, fetchRoutineData } = useRoutineStore();
+  const { user } = useLoginStore()
+  const handleExerciseClick = (exercise: RoutineExercise) => {
     setSelectedExercise(exercise);
   };
 
   const handleCloseModal = () => {
     setSelectedExercise(null);
   };
+
+  useEffect(() => {
+    if (!workoutRoutine) {
+      fetchRoutineData(user?.userId);
+    }
+    console.log(workoutRoutine);
+    
+  }, []);
+
+
   return (
     <>
       <Typography fontSize={"22px"} fontFamily={"Garamond"} fontWeight={"bold"} marginTop={"0.2rem"}>
         Workout Routine
       </Typography>
       <div className="workout-routine-page">
-        {workoutData.map((day, index) => (
-          <WorkoutDay key={index} title={day.title} exercises={day.exercises} onExerciseClick={handleExerciseClick} />
+        {workoutRoutine?.map((day, index) => (
+          <WorkoutDay key={index} title={day.day} exercises={day.exercises} onExerciseClick={handleExerciseClick} />
         ))}
         {selectedExercise && (
           <RoutineExerciseModal
