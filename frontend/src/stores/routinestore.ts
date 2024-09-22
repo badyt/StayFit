@@ -6,6 +6,7 @@ interface RoutineStore {
     workoutRoutine: RoutineDay[] | null;
     setWorkoutRoutine: (data: RoutineDay[] | null) => void;
     fetchRoutineData: (userId: User["userId"] | undefined) => void;
+    reset: () => void;
 }
 
 const useRoutineStore = create<RoutineStore>((set) => ({
@@ -23,10 +24,13 @@ const useRoutineStore = create<RoutineStore>((set) => ({
                 toast.error(response.error)
                 :
                 useRoutineStore.getState().setWorkoutRoutine(response.data.days);
+                console.log(response.data.days);
+                
         } catch (error) {
             console.error('Error fetching routine data:', error);
         }
-    }
+    },
+    reset: () => set({ workoutRoutine: [] })
 }));
 
 export default useRoutineStore;

@@ -119,11 +119,10 @@ const WorkoutRoutinePage: React.FC = () => {
   };
 
   useEffect(() => {
-    if (!workoutRoutine) {
+    if (workoutRoutine?.length === 0) {
       fetchRoutineData(user?.userId);
     }
     console.log(workoutRoutine);
-    
   }, []);
 
 

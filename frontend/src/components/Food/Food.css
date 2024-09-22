@@ -1,13 +1,23 @@
 /* CSS */
 
-.centered-cell {
-    text-align: center !important;
+.food-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.centered-columns .MuiDataGrid-root .centered-cell {
-    justify-content: center !important;
+.food-cell{
+    margin: 10px;
+    text-align: center;
+    background-color: var(--secondary-bg-color);
+    border: 3px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-.food-wrapper{
-    margin-top: 2rem;
+.food-cell img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }

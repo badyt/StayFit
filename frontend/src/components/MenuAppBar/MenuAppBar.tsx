@@ -14,6 +14,7 @@ import useLoginStore from '../../stores/loginstore';
 import SideDrawer from '../SideDrawer'
 import useSideDrawerStore from '../../stores/sidedrawerstore';
 import BasicSelect from '../BasicSelect';
+import { resetAllStores } from '../../stores/resetStore';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -80,6 +81,7 @@ export default function MenuAppBar() {
   const handleLogout = () => {
     handleClose();
     logout();
+    resetAllStores();
   }
 
   return (

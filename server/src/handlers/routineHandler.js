@@ -13,7 +13,7 @@ const addExerciseToRoutine = async (req) => {
         throw new Error(`Exercise already exists in ${day}`);
     else {
         userRoutine = addExerciseToDay(userRoutine, day, exercise, sets, reps, weight);
-        await Database.updateOne(Routines_Collection, { _id: userRoutine.userId }, { days: userRoutine.days });
+        await Database.updateOne(Routines_Collection, { _id: userId }, { days: userRoutine.days });
         return true;
     }
 }
@@ -21,15 +21,17 @@ const addExerciseToRoutine = async (req) => {
 
 const checkExerciseInDay = (exerciseName, day, userRoutine) => {
     exerciseDoesExist = searchExercise(exerciseName, userRoutine.days[DaysOfWeek.indexOf(day)].exercises);
-    return (exerciseDoesExist) ? true : false;
+    return exerciseDoesExist
 }
 
 const searchExercise = (exerciseName, exercises) => {
+    let doesExist = false;
     exercises.forEach(element => {
-        if (element.name === exerciseName)
-            return true
+        if (element.name === exerciseName) {
+            doesExist = true;
+        }
     });
-    return false
+    return doesExist;
 }
 
 const addExerciseToDay = (userRoutine, day, exercise, sets, reps, weight) => {
