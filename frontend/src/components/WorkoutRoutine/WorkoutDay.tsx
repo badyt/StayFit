@@ -2,21 +2,21 @@
 import React from "react";
 
 interface DayProps {
-  title: string;
+  day: string;
   exercises: RoutineExercise[] | null;
-  onExerciseClick: (exercise: RoutineExercise) => void;
+  onExerciseClick: (exercise: RoutineExercise, day: string) => void;
 }
 
-const WorkoutDay: React.FC<DayProps> = ({ title, exercises, onExerciseClick }) => {
+const WorkoutDay: React.FC<DayProps> = ({ day, exercises, onExerciseClick }) => {
   return (
     <div className="day-container">
-      <h2 className="day-title">{title}</h2>
+      <h2 className="day-title">{day}</h2>
       {(exercises?.length ?? null) ? <ul className="exercise-list">
         {exercises?.map((exerciseRow, index) => (
           <li key={index} className="exercise-item">
             <button
               className="exercise-button"
-              onClick={() => onExerciseClick(exerciseRow)}
+              onClick={() => onExerciseClick(exerciseRow, day)}
             >
               <div className="exercise-content">
                 <span className="exercise-name">{index + 1}. {exerciseRow.name}</span>

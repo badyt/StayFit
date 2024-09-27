@@ -106,6 +106,15 @@ server.post('/addExerciseToRoutine', async (req, res) => {
     }
 })
 
+server.post('/removeExerciseFromRoutine', async (req, res) => {
+    try {
+        let didSucceed = await routineHandler.removeExerciseFromRoutine(req)
+        res.send(didSucceed)
+    } catch (error) {
+        res.send({ error: error.message });
+    }
+})
+
 server.get('/getUserRoutine', async (req, res) => {
     try {
         const userId = req.query.userId; 

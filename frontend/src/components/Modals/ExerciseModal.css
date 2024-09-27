@@ -130,6 +130,19 @@
   cursor: pointer;
 }
 
+.modal-remove-button{
+  padding: 12px;
+  background-color: #e04848;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
 .modal-add-button:hover {
   background-color: var(--button-hover-bg-color);
 }

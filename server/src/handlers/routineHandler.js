@@ -1,6 +1,7 @@
 const Database = require('../database/my-database');
 const DaysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const { Routines_Collection } = require('../globals')
+
 const addExerciseToRoutine = async (req) => {
     const { userId, day, exercise, sets, reps, weight } = req.body;
     let userRoutine = await Database.findOne(Routines_Collection, { _id: userId });
@@ -18,6 +19,17 @@ const addExerciseToRoutine = async (req) => {
     }
 }
 
+const removeExerciseFromRoutine = async (req) => {
+    const { userId, day, exercise } = req.body;
+    didRemove = false;
+    let userRoutine = await Database.findOne(Routines_Collection, { _id: userId });
+    if (!userRoutine) {
+        throw new Error(`Error finding user routine`);
+    } else {
+        didRemove = await removeExerciseFromDay(userRoutine, day, exercise);
+    }
+    return didRemove;
+}
 
 const checkExerciseInDay = (exerciseName, day, userRoutine) => {
     exerciseDoesExist = searchExercise(exerciseName, userRoutine.days[DaysOfWeek.indexOf(day)].exercises);
@@ -45,6 +57,29 @@ const addExerciseToDay = (userRoutine, day, exercise, sets, reps, weight) => {
     return userRoutine;
 }
 
+const removeExerciseFromDay = async (userRoutine, day, exercise) => {
+    let didSucceed = false;
+    try {
+        const dayIndex = DaysOfWeek.indexOf(day);
+        const exercises = userRoutine.days[dayIndex].exercises;
+        for (let index = 0; index < exercises.length; index++) {
+            const element = exercises[index];
+            if (element.name === exercise.name) {
+                exercises.splice(index, 1);  // Remove the exercise
+                await Database.updateOne(
+                    Routines_Collection,
+                    { _id: userRoutine._id },
+                    { days: userRoutine.days }
+                );
+                didSucceed = true;
+                break;  // Exit the loop once you find the exercise
+            }
+        }
+    } catch (error) {
+        throw new Error("something went wrong deleting an exercise from the user routine!");
+    }
+    return didSucceed;
+}
 const createEmptyRoutine = (userId) => {
     let newUserRoutine = {
         _id: userId,
@@ -88,4 +123,4 @@ const getUserRoutine = async (userId) => {
     }
     return user;
 }
-module.exports = { addExerciseToRoutine, getUserRoutine }
+module.exports = { addExerciseToRoutine, getUserRoutine, removeExerciseFromRoutine }
