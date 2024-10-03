@@ -4,7 +4,7 @@ import ExerciseCategory from './ExerciseCategory';
 import { useEffect, useState } from "react";
 import config from '../../../config';
 import useExercisesStore from "../../stores/exercisesstore";
-import ExerciseModal from "../Modals/ExerciseModal";
+import ExerciseModal from "../Modals/ExercisesModals/ExerciseModal";
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 
 export default function ExercisesPage() {

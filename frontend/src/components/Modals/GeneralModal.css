@@ -5,11 +5,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Dark overlay */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999; /* Ensures it's above other content */
+  z-index: 999;
+  /* Ensures it's above other content */
 }
 
 .modal-container {
@@ -18,9 +20,11 @@
   padding: 20px;
   max-width: 600px;
   width: 90%;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  /* More prominent shadow */
   position: relative;
-  animation: fadeIn 0.3s ease; /* Add subtle fade-in effect */
+  animation: fadeIn 0.3s ease;
+  /* Add subtle fade-in effect */
 }
 
 .modal-title {
@@ -28,7 +32,8 @@
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
-  color: var(--primary-text-color); /* Ensure the text color contrasts the background */
+  color: var(--primary-text-color);
+  /* Ensure the text color contrasts the background */
 }
 
 .modal-content {
@@ -38,11 +43,12 @@
 }
 
 .modal-image {
-  width: 50%; 
+  width: 50%;
   height: auto;
   border-radius: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for the image */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Shadow for the image */
 }
 
 .modal-description-container {
@@ -61,8 +67,10 @@
 .modal-description {
   font-size: 1rem;
   line-height: 1.6;
-  color: var(--secondary-text-color); /* A lighter text color for the description */
-  padding-bottom: 20px; /* Added space at the bottom */
+  color: var(--secondary-text-color);
+  /* A lighter text color for the description */
+  padding-bottom: 20px;
+  /* Added space at the bottom */
 }
 
 .modal-close-button {
@@ -72,7 +80,8 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #ff5c5c; /* More visible color */
+  background-color: #ff5c5c;
+  /* More visible color */
   color: white;
   font-size: 1.2rem;
   border: none;
@@ -85,7 +94,8 @@
 }
 
 .modal-close-button:hover {
-  background-color: #e04848; /* Slight hover effect */
+  background-color: #e04848;
+  /* Slight hover effect */
 }
 
 .modal-add-section {
@@ -115,9 +125,18 @@
   border: 1px solid #ccc;
   font-size: 1rem;
 }
-.input-group select{
+
+.input-group select {
   width: 8rem;
   margin-right: 1rem;
+}
+
+.input-group input[type="time"] {
+  width: 100%;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator{
+  filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
 }
 
 .modal-add-button {
@@ -130,9 +149,9 @@
   cursor: pointer;
 }
 
-.modal-remove-button{
+.modal-remove-button {
   padding: 12px;
-  background-color: #e04848;
+  background-color: #ff5c5c;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -147,11 +166,16 @@
   background-color: var(--button-hover-bg-color);
 }
 
+.modal-remove-button:hover {
+  background-color: #e04848;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);

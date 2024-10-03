@@ -1,10 +1,10 @@
 // Modal.tsx
 import React, { useEffect, useRef } from "react";
-import "./ExerciseModal.css";
-import config from "../../../config";
+import "../GeneralModal.css";
+import config from "../../../../config";
 import { toast } from "react-toastify";
-import useLoginStore from "../../stores/loginstore";
-import useRoutineStore from "../../stores/routinestore";
+import useLoginStore from "../../../stores/loginstore";
+import useRoutineStore from "../../../stores/routinestore";
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 
 interface ModalProps {

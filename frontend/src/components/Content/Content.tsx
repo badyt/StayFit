@@ -5,6 +5,7 @@ import FoodComponent from '../Food';
 import Exercises from "../Exercises";
 import useSideDrawerStore from "../../stores/sidedrawerstore";
 import WorkoutRoutinePage from "../WorkoutRoutine"
+import DietPlanPage from "../DietPlan/DietPlanPage";
 const Content = () => {
     const { user } = useLoginStore();
     const { pickedDrawerTab } = useSideDrawerStore();
@@ -17,7 +18,7 @@ const Content = () => {
             case "Food":
                 return <FoodComponent/>
             case "Diet Plan":
-                return <div>Diet Plan</div>
+                return <DietPlanPage/>
             case "Diet History":
                 return <div>Diet History</div>
             case "Workout Routine":

@@ -24,8 +24,6 @@ const useRoutineStore = create<RoutineStore>((set) => ({
                 toast.error(response.error)
                 :
                 useRoutineStore.getState().setWorkoutRoutine(response.data.days);
-                console.log(response.data.days);
-                
         } catch (error) {
             console.error('Error fetching routine data:', error);
         }

@@ -18,7 +18,7 @@ declare global {
         userId: string;
         iat: number;
         exp: number;
-      }
+    }
 
     interface DrawerTab {
         text: string,
@@ -33,7 +33,7 @@ declare global {
         items: string[]
     }
 
-    export interface Exercise {
+    interface Exercise {
         id: number;
         name: string;
         image: string;
@@ -41,7 +41,7 @@ declare global {
         description: string;
     }
 
-    export interface RoutineExercise{
+    interface RoutineExercise {
         id: number;
         name: string;
         image: string;
@@ -52,17 +52,35 @@ declare global {
         weight: number;
     }
 
-    export interface RoutineDay{
+    interface RoutineDay {
         day: string;
         exercises: RoutineExercise[];
     }
 
-    export interface ExerciseCategory {
+    interface ExerciseCategory {
         id: number;
         name: string;
         exercises: Exercise[];
     }
 
+    interface FoodData {
+        name: string;
+        calories_per_100g: number;
+        protein_per_100g: number;
+    }
+
+    interface Meal {
+        food: FoodData;
+        time: string;
+        grams: number;
+        totalCalories: number;
+        totalProtien: number;
+    }
+
+    interface DietDay {
+        day: string;
+        meals: Meal[];
+    }
 }
 export { }
 

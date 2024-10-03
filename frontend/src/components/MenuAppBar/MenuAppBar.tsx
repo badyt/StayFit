@@ -108,7 +108,7 @@ export default function MenuAppBar() {
           textAlign={auth ? "left" : "center"} variant="h6" component="div">
           StayFit
         </Typography>
-        {/* {pickedDrawerTab?.containSelect && <BasicSelect label={pickedDrawerTab?.selectionItems?.label} items={pickedDrawerTab.selectionItems?.items} />} */}
+        {pickedDrawerTab?.containSelect && <BasicSelect label={pickedDrawerTab?.selectionItems?.label} items={pickedDrawerTab.selectionItems?.items} />}
         {pickedDrawerTab?.containSearch && <Search>
           <SearchIconWrapper>
             <SearchIcon />

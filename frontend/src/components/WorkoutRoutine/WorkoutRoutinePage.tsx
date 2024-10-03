@@ -2,9 +2,9 @@
 import React, { useEffect } from "react";
 import WorkoutDay from "./WorkoutDay";
 import { Typography } from "@mui/material";
-import "./WorkoutRoutine.css"
+import "../../styles/Plan.css";
 import { useState } from "react";
-import RoutineExerciseModal from "../Modals/RoutineExcerciseModal";
+import RoutineExerciseModal from "../Modals/ExercisesModals/RoutineExcerciseModal";
 import useRoutineStore from "../../stores/routinestore";
 import useLoginStore from "../../stores/loginstore";
 
@@ -28,16 +28,15 @@ const WorkoutRoutinePage: React.FC = () => {
     if (workoutRoutine?.length === 0) {
       fetchRoutineData(user?.userId);
     }
-    console.log(workoutRoutine);
   }, []);
 
 
   return (
     <>
-      <Typography fontSize={"22px"} fontFamily={"Garamond"} fontWeight={"bold"} marginTop={"0.2rem"}>
+      <Typography fontSize={"28px"} fontFamily={"Garamond"} fontWeight={"bold"} marginTop={"0.2rem"}>
         Workout Routine
       </Typography>
-      <div className="workout-routine-page">
+      <div className="plan-page">
         {workoutRoutine?.map((day, index) => (
           <WorkoutDay key={index} day={day.day} exercises={day.exercises} onExerciseClick={handleExerciseClick} />
         ))}

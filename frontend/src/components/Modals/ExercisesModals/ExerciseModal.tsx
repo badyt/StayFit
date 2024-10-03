@@ -1,10 +1,10 @@
 // Modal.tsx
 import React, { useEffect, useState, useRef } from "react";
-import "./ExerciseModal.css"
-import config from "../../../config";
-import useLoginStore from "../../stores/loginstore";
+import "../GeneralModal.css"
+import config from "../../../../config";
+import useLoginStore from "../../../stores/loginstore";
 import { toast } from "react-toastify";
-import useRoutineStore from "../../stores/routinestore";
+import useRoutineStore from "../../../stores/routinestore";
 
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 interface ModalProps {
@@ -49,7 +49,7 @@ const ExerciseModal: React.FC<ModalProps> = ({ exercise, onClose }) => {
       }
       onClose(); // Close the modal after adding
     } else {
-      alert("Please fill in all fields!");
+      toast.warn("Please fill in all fields!");
     }
   };
 

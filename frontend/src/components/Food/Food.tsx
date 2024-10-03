@@ -1,19 +1,23 @@
 import useFoodStore from '../../stores/foodstore';
 import config from '../../../config';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './Food.css';
 import { Typography } from '@mui/material';
 import FoodCell from './FoodCell';
+import FoodModal from '../Modals/FoodModals/FoodModal';
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
-
-interface FoodData {
-    name: string;
-    calories_per_100g: number;
-    protein_per_100g: number;
-}
 
 export default function FoodComponent() {
     const { foodData, setFoodData } = useFoodStore();
+    const [selectedFood, setSelectedFood] = useState<FoodData | null>(null);
+
+    const handleFoodClick = (food: FoodData) => {
+        setSelectedFood(food);
+    };
+    const handleCloseModal = () => {
+        setSelectedFood(null);
+    };
+
     const fetchFoodData = async () => {
         try {
             const response = await fetch(`${url}/getAllFood`, {
@@ -33,10 +37,6 @@ export default function FoodComponent() {
         }
     };
 
-    const onCellClick = (food : FoodData) => {
-        console.log(" clicked ");
-    }
-
     useEffect(() => {
         if (!foodData) {
             fetchFoodData();
@@ -49,11 +49,17 @@ export default function FoodComponent() {
                 fontWeight={"bold"}
                 marginBottom={"1rem"}>Food Menu</Typography>
             <div className='food-container'>
-            {foodData?.map((foodCell) => (
-                        <FoodCell food={foodCell} onClick={onCellClick} />
-                    ))}
+                {foodData?.map((foodCell) => (
+                    <FoodCell food={foodCell} onClick={handleFoodClick} />
+                ))}
 
             </div>
+            {selectedFood && (
+                <FoodModal
+                    food={selectedFood}
+                    onClose={handleCloseModal}
+                />
+            )}
         </>
     );
 }

@@ -5,6 +5,7 @@ const cors = require('cors');
 const Database = require('./database/my-database');
 const requestHandler = require('./handlers/requestsHandler');
 const routineHandler = require('./handlers/routineHandler');
+const dietHandler = require('./handlers/dietHandler');
 const { isAuth } = require('./handlers/isAuth');
 const { Food_Collection, Exercises_Collection } = require('./globals')
 const server = express();
@@ -124,4 +125,33 @@ server.get('/getUserRoutine', async (req, res) => {
         res.send({ error: error.message })
     }
 })
+
+server.get('/getUserDiet', async (req, res) => {
+    try {
+        const userId = req.query.userId; 
+        let routine = await dietHandler.getUserDiet(userId);
+        res.send({ data: routine })
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+server.post('/addMealToDiet', async (req, res) => {
+    try {
+        let didSucceed = await dietHandler.addMealToDiet(req)
+        res.send(didSucceed)
+    } catch (error) {
+        res.send({ error: error.message });
+    }
+})
+
+server.post('/removeMealFromDiet', async (req, res) => {
+    try {
+        let didSucceed = await dietHandler.removeMealFromDiet(req)
+        res.send(didSucceed)
+    } catch (error) {
+        res.send({ error: error.message });
+    }
+})
+
 Initialize();

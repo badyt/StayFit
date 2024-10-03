@@ -11,19 +11,19 @@ const WorkoutDay: React.FC<DayProps> = ({ day, exercises, onExerciseClick }) => 
   return (
     <div className="day-container">
       <h2 className="day-title">{day}</h2>
-      {(exercises?.length ?? null) ? <ul className="exercise-list">
+      {(exercises?.length ?? null) ? <ul className="item-list">
         {exercises?.map((exerciseRow, index) => (
-          <li key={index} className="exercise-item">
+          <li key={index} className="item">
             <button
-              className="exercise-button"
+              className="item-button"
               onClick={() => onExerciseClick(exerciseRow, day)}
             >
-              <div className="exercise-content">
-                <span className="exercise-name">{index + 1}. {exerciseRow.name}</span>
-                <div className="exercise-details">
-                  <span className="exercise-sets">Sets: {exerciseRow.sets}</span>
-                  <span className="exercise-reps">Reps: {exerciseRow.reps}</span>
-                  <span className="exercise-weight">Weight: {exerciseRow.weight}kg</span>
+              <div className="item-content">
+                <span className="item-name">{index + 1}. {exerciseRow.name}</span>
+                <div className="item-details">
+                  <span className="item-child">Sets: {exerciseRow.sets}</span>
+                  <span className="item-child">Reps: {exerciseRow.reps}</span>
+                  <span className="item-child">Weight: {exerciseRow.weight}kg</span>
                 </div>
               </div>
             </button>
