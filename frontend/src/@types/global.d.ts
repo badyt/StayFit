@@ -81,6 +81,23 @@ declare global {
         day: string;
         meals: Meal[];
     }
+
+    interface DietHistoryEntry {
+        totalCalories: number;
+        totalProteins: number;
+      }
+      
+      interface MonthDietHistory {
+        [day: string]: DietHistoryEntry; 
+      }
+      
+      interface YearDietHistory {
+        [month: string]: MonthDietHistory;
+      }
+      
+      interface DietHistory {
+        [year: string]: YearDietHistory;
+      }
 }
 export { }
 

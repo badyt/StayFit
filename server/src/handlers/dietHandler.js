@@ -1,6 +1,6 @@
 const Database = require('../database/my-database');
 const DaysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-const { Diets_Collection } = require('../globals')
+const { Diets_Collection, Diet_History } = require('../globals')
 
 const addMealToDiet = async (req) => {
     const { userId, day, meal } = req.body;
@@ -33,7 +33,7 @@ const removeMealFromDiet = async (req) => {
 const addMealToDay = (userRoutine, day, meal) => {
     const dayIndex = DaysOfWeek.indexOf(day);
     userRoutine.days[dayIndex].meals.push(meal);
-    
+
     // Sort meals by time
     userRoutine.days[dayIndex].meals.sort((a, b) => {
         const timeA = a.time.split(':').map(Number);
@@ -111,4 +111,73 @@ const getUserDiet = async (userId) => {
     }
     return user;
 }
-module.exports = { addMealToDiet, getUserDiet, removeMealFromDiet }
+
+
+async function updateDietHistory(req) {
+    const { userId, totalCalories, totalProteins, date } = req.body;
+    const parsedDate = new Date(date);
+    if (isNaN(parsedDate.getTime())) {
+        throw new Error('Invalid date provided.');
+    }
+    const year = parsedDate.getFullYear().toString();
+    const month = String(parsedDate.getMonth() + 1).padStart(2, '0');
+    const day = String(parsedDate.getDate()).padStart(2, '0');
+    try {
+        const result = await Database.db.collection(Diet_History).updateOne(
+            { _id: userId },
+            {
+                $set: {
+                    [`${Diet_History}.${year}`]: { 
+                        [`${month}`]: { 
+                            [`${day}`]: { totalCalories, totalProteins } 
+                        }
+                    }
+                }
+            },
+            { upsert: true }
+        );
+
+        if (result.matchedCount === 0 && result.upsertedCount === 0) {
+            throw new Error('No documents were updated or inserted.');
+        }
+        return true;
+    } catch (error) {
+        console.error('Error updating diet history:', error.message);
+        throw error;
+    }
+}
+
+async function getDietHistoryForDay(userId, year, month, day) {
+    try {
+        const dietHistory = await Database.findOne(Diet_History, { _id: userId });
+        if (!dietHistory) {
+            throw new Error('No diet history found for this user.');
+        }
+        const dayEntry = dietHistory.diet_history[year]?.[month]?.[day];
+        if (!dayEntry) {
+            throw new Error('No diet entry found for this date.');
+        }
+        return {
+            totalCalories: dayEntry.totalCalories,
+            totalProteins: dayEntry.totalProteins,
+        };
+    } catch (error) {
+        console.error('Error retrieving diet history:', error);
+        throw error;
+    }
+}
+
+const getDietHistory = async (userId) => {
+    try {
+        const result = await Database.findOne(Diet_History, { _id: userId });
+        if (!result) {
+            throw new Error('No diet history found for this user.');
+        }
+        return result.diet_history;
+    } catch (error) {
+        throw error;
+    }
+}
+
+
+module.exports = { addMealToDiet, getUserDiet, removeMealFromDiet, updateDietHistory, getDietHistoryForDay, getDietHistory }

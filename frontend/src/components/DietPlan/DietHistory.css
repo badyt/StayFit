@@ -1,0 +1,31 @@
+.diet-history {
+    padding: 20px;
+    background-color: #f5f5f5; /* Adjust based on your design */
+    border-radius: 8px;
+  }
+  
+  .month-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .current-month {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .diet-history-month {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .diet-history-day {
+    padding: 10px;
+    border: 1px solid #ccc; /* Adjust as needed */
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #ffffff; /* Adjust based on your design */
+  }
+  

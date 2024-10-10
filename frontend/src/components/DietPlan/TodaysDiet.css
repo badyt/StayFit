@@ -1,0 +1,73 @@
+.todays-diet-container {
+    background-color: var(--secondary-bg-color);
+    padding:30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.date-title {
+    color: var(--primary-text-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.day-title {
+    color: var(--primary-text-color);
+    margin-bottom: 20px;
+}
+
+.meal-list {
+    list-style: none;
+    padding: 0;
+}
+
+.meal-item {
+    background-color: var(--button-bg-color);
+    color: var(--primary-text-color);
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(58, 110, 165, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+
+.meal-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.meal-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+.meal-details span {
+    margin-right: 5px;
+    background-color: var(--details-bg-color);
+    margin-top: 3px;
+    border-radius: 3px;
+}
+
+.confirm-button {
+    top: 0.5rem;
+}
+
+.total-values{
+    font-size: smaller;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.total-values span{
+    background-color: var(--primary-bg-color);
+    color: var(--button-hover-bg-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: block;
+    margin-top: 5px;
+    width: fit-content;
+}
+

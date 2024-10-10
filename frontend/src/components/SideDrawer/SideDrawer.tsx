@@ -25,8 +25,8 @@ interface SideDrawerProps {
 type DrawerListType = DrawerTab[];
 
 const FirstDrawerListItems: DrawerListType = [
-  { text: "Diet Plan", icon: FoodBankIcon, containSearch: false, containSelect: true, 
-    selectionItems: {label: "View", items: ["Weekly", "Today"]} },
+  { text: "Diet Plan", icon: FoodBankIcon, containSearch: false, containSelect: false, 
+    selectionItems: null },
   { text: "Diet History", icon: MenuBookIcon, containSearch: false, containSelect: false, selectionItems: null },
   { text: "Workout Routine", icon: FitnessCenterIcon, containSearch: false, containSelect: false, selectionItems: null },
   { text: "Workout History", icon: HistoryIcon, containSearch: false, containSelect: false, selectionItems: null },
