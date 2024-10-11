@@ -151,11 +151,11 @@ async function getDietHistoryForDay(userId, year, month, day) {
     try {
         const dietHistory = await Database.findOne(Diet_History, { _id: userId });
         if (!dietHistory) {
-            throw new Error('No diet history found for this user.');
+            return false;
         }
         const dayEntry = dietHistory.diet_history[year]?.[month]?.[day];
         if (!dayEntry) {
-            throw new Error('No diet entry found for this date.');
+            return false;
         }
         return {
             totalCalories: dayEntry.totalCalories,

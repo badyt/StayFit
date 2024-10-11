@@ -1,31 +1,66 @@
-.diet-history {
+.diet-history-container {
     padding: 20px;
-    background-color: #f5f5f5; /* Adjust based on your design */
-    border-radius: 8px;
-  }
-  
-  .month-navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .current-month {
-    flex-grow: 1;
     text-align: center;
-  }
-  
-  .diet-history-month {
+}
+
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.day-label {
+    font-weight: bold;
+}
+
+.calendar-day {
     display: flex;
     flex-direction: column;
-  }
-  
-  .diet-history-day {
+    align-items: center;
+    justify-content: center;
     padding: 10px;
-    border: 1px solid #ccc; /* Adjust as needed */
-    margin-bottom: 10px;
-    border-radius: 4px;
-    background-color: #ffffff; /* Adjust based on your design */
-  }
-  
+    border: 1px solid var(--border-color);
+    background-color: var(--secondary-bg-color);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.current-month {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.empty {
+    background-color: var(--primary-bg-color);
+    /* Light gray background for empty days */
+    border: none;
+}
+
+
+.completed {
+    background-color: var(--button-bg-color);
+}
+
+.completed:hover {
+    background-color: var(--button-hover-bg-color);
+    cursor: pointer;
+}
+
+.completed-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.day-number {
+    font-size: 1.2em;
+}

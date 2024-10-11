@@ -104,7 +104,7 @@ const TodaysDiet: React.FC = () => {
                     </li>
                 </ul>
             ) : (
-                <Typography variant="body1" className="no-meals-text">No meals planned for today.</Typography>
+                <Typography variant="body1" style={{marginTop: "1rem"}}>No meals planned for today.</Typography>
             )}
 
             {todayMeals && todayMeals.length > 0 && <Button
