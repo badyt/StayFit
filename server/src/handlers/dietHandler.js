@@ -121,17 +121,13 @@ async function updateDietHistory(req) {
     }
     const year = parsedDate.getFullYear().toString();
     const month = String(parsedDate.getMonth() + 1).padStart(2, '0');
-    const day = String(parsedDate.getDate()).padStart(2, '0');
+    const day = String(parsedDate.getDate() + 1).padStart(2, '0');
     try {
         const result = await Database.db.collection(Diet_History).updateOne(
             { _id: userId },
             {
                 $set: {
-                    [`${Diet_History}.${year}`]: { 
-                        [`${month}`]: { 
-                            [`${day}`]: { totalCalories, totalProteins } 
-                        }
-                    }
+                    [`${Diet_History}.${year}.${month}.${day}`]: { totalCalories, totalProteins }
                 }
             },
             { upsert: true }

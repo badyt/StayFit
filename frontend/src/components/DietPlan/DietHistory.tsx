@@ -7,12 +7,19 @@ import useLoginStore from "../../stores/loginstore";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './DietHistory.css';
+import DietHistoryDay from "../Modals/DietHistoryModals/DietHistoryDayModal";
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+interface SelectedDay {
+    date: Date;
+    totalValues: DietHistoryEntry | undefined;
+}
 
 const DietHistory: React.FC = () => {
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [daysInMonth, setDaysInMonth] = useState<Date[]>([]);
+    const [selectedDay, setSelectedDay] = useState<SelectedDay | null>(null);
     const { user } = useLoginStore();
     const { dietHistory, fetchDietHistory } = useDietHistoryStore();
     const today = new Date();
@@ -63,56 +70,82 @@ const DietHistory: React.FC = () => {
         }
     };
 
+    const handleDayClick = (date: Date, isCompleted: boolean) => {
+        if (isCompleted) {
+            const yearString = date.getFullYear().toString();
+            const monthString = String(date.getMonth() + 1).padStart(2, '0');
+            const dayString = String(date.getDate()).padStart(2, '0');
+            const totalValues = dietHistory?.[yearString]?.[monthString]?.[dayString];
+            setSelectedDay({ date: date, totalValues: totalValues })
+        } else {
+            setSelectedDay({ date: date, totalValues: undefined })
+        }
+    }
+
+    const handleCloseModal = () => {
+        setSelectedDay(null);
+    };
+
     const startDay = daysInMonth[0]?.getDay();
 
     return (
-        <div className="diet-history-container">
-            <div className="month-navigation">
-                <IconButton onClick={handlePrevMonth}>
-                    <ArrowBackIosIcon />
-                </IconButton>
-                <Typography variant="h5" className="current-month">
-                    {format(currentMonth, "MMMM yyyy")}</Typography>
-                <IconButton onClick={handleNextMonth}
-                    disabled={isAfter(addMonths(currentMonth, 1), new Date())}  >
-                    <ArrowForwardIosIcon />
-                </IconButton>
+        <>
+            <div className="diet-history-container">
+                <div className="month-navigation">
+                    <IconButton onClick={handlePrevMonth}>
+                        <ArrowBackIosIcon />
+                    </IconButton>
+                    <Typography variant="h5" className="current-month">
+                        {format(currentMonth, "MMMM yyyy")}</Typography>
+                    <IconButton onClick={handleNextMonth}
+                        disabled={isAfter(addMonths(currentMonth, 1), new Date())}  >
+                        <ArrowForwardIosIcon />
+                    </IconButton>
+                </div>
+
+                <Grid container spacing={2} className="calendar-grid">
+                    {/* Render the days of the week */}
+                    {daysOfWeek.map((day) => (
+                        <Grid item xs={1.5} key={day}>
+                            <Typography variant="subtitle1" className="day-label">{day}</Typography>
+                        </Grid>
+                    ))}
+
+                    {Array.from({ length: startDay }).map((_, index) => (
+                        <Grid item xs={1.5} key={`empty-${index}`} className="calendar-day empty" />
+                    ))}
+
+                    {/* Render all the days in the current month */}
+                    {daysInMonth.map((date) => {
+                        const isFuture = date > today; // Check if the date is in the future
+                        const isCompleted = isDietCompleted(date.getFullYear(), date.getMonth(), date.getDate());
+                        return (
+                            <Grid
+                                item
+                                xs={1.5}
+                                key={date.getDate()}
+                                className={`calendar-day ${isCompleted ? 'completed' : ''}`}
+                                style={isFuture ? { pointerEvents: 'none', opacity: 0.5 } : { cursor: "pointer" }} // Disable future days
+                                onClick={() => !isFuture && handleDayClick(date, isCompleted)}
+                            >
+                                <Typography variant="body1" className="day-number">{date.getDate()}</Typography>
+                                {/* Display a checkmark if the diet is completed */}
+                                {isCompleted && (
+                                    <CheckCircle color="success" className="completed-icon" />
+                                )}
+                            </Grid>
+                        );
+                    })}
+                </Grid>
             </div>
-
-            <Grid container spacing={2} className="calendar-grid">
-                {/* Render the days of the week */}
-                {daysOfWeek.map((day) => (
-                    <Grid item xs={1.5} key={day}>
-                        <Typography variant="subtitle1" className="day-label">{day}</Typography>
-                    </Grid>
-                ))}
-
-                {Array.from({ length: startDay }).map((_, index) => (
-                    <Grid item xs={1.5} key={`empty-${index}`} className="calendar-day empty" />
-                ))}
-
-                {/* Render all the days in the current month */}
-                {daysInMonth.map((date) => {
-                    const isFuture = date > today; // Check if the date is in the future
-                    const isCompleted = isDietCompleted(date.getFullYear(), date.getMonth(), date.getDate());
-                    return (
-                      <Grid
-                        item
-                        xs={1.5}
-                        key={date.getDate()}
-                        className={`calendar-day ${isCompleted ? 'completed' : ''}`}
-                        style={isFuture ? { pointerEvents: 'none', opacity: 0.5 } : {}} // Disable future days
-                      >
-                        <Typography variant="body1" className="day-number">{date.getDate()}</Typography>
-                        {/* Display a checkmark if the diet is completed */}
-                        {isCompleted && (
-                          <CheckCircle color="success" className="completed-icon" />
-                        )}
-                      </Grid>
-                    );
-})}
-            </Grid>
-        </div>
+            {selectedDay && (
+                <DietHistoryDay
+                    date={selectedDay.date}
+                    totalValues={selectedDay.totalValues}
+                    onClose={handleCloseModal}
+                />
+            )}
+        </>
     );
 };
 

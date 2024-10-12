@@ -33,7 +33,9 @@
     text-align: center;
     position: relative;
 }
-
+.calendar-day:hover{
+    background-color: #47474a;
+}
 .current-month {
     flex-grow: 1;
     text-align: center;
@@ -43,6 +45,7 @@
     background-color: var(--primary-bg-color);
     /* Light gray background for empty days */
     border: none;
+    pointer-events: none;
 }
 
 
@@ -64,3 +67,21 @@
 .day-number {
     font-size: 1.2em;
 }
+
+.value-text{
+    display: flex;
+    flex-direction: column; /* Arrange spans vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /
+}
+
+.value-text span{
+    width: fit-content;
+    background-color: var(--button-bg-color);
+    border: 3px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #00ff44;
+    margin: 5px 0; 
+}
+
