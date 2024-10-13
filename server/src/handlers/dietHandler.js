@@ -114,14 +114,18 @@ const getUserDiet = async (userId) => {
 
 
 async function updateDietHistory(req) {
-    const { userId, totalCalories, totalProteins, date } = req.body;
+    const { userId, totalCalories, totalProteins, date, minutesOffset } = req.body;
     const parsedDate = new Date(date);
+    const minutesDiff = parsedDate.getTimezoneOffset() - minutesOffset;
+    if (minutesDiff !== 0) {
+        parsedDate.setMinutes(parsedDate.getMinutes() + minutesDiff);
+    }
     if (isNaN(parsedDate.getTime())) {
         throw new Error('Invalid date provided.');
     }
     const year = parsedDate.getFullYear().toString();
     const month = String(parsedDate.getMonth() + 1).padStart(2, '0');
-    const day = String(parsedDate.getDate() + 1).padStart(2, '0');
+    const day = String(parsedDate.getDate()).padStart(2, '0');
     try {
         const result = await Database.db.collection(Diet_History).updateOne(
             { _id: userId },

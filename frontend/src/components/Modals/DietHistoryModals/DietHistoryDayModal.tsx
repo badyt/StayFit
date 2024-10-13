@@ -42,8 +42,8 @@ const DietHistoryDay: React.FC<ModalProps> = ({ date, totalValues, onClose }) =>
                         userId: user?.userId,
                         totalCalories: calories,
                         totalProteins: protiens,
-                        date: date
-
+                        date: date,
+                        minutesOffset: date.getTimezoneOffset()
                     })
                 })).json();
                 if (response.error) {
