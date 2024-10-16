@@ -11,10 +11,10 @@ import TodaysDiet from "./TodaysDiet";
 import DietHistory from "./DietHistory";
 
 const DietPlanPage: React.FC = () => {
-  const tabs = ["Diet Plan", "Today's Diet","History"]
+  const tabs = ["Diet Plan", "Today's Diet","History"];
   const [selectedMeal, setSelectedMeal] = useState<Meal | null>(null);
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
-  const [selectedTab, setTab] = useState<string>(tabs[0])
+  const [selectedTab, setTab] = useState<string>(tabs[0]);
   const { dietPlan, fetchDietPlan } = useDietPlanStore();
   const { user } = useLoginStore();
   const handleExerciseClick = (meal: Meal, day: string) => {

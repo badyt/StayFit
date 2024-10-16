@@ -9,7 +9,7 @@ interface DietHistoryStore {
     reset: () => void;
 }
 
-const UseDietHistoryStore = create<DietHistoryStore>((set) => ({
+const useDietHistoryStore = create<DietHistoryStore>((set) => ({
     dietHistory: null,
     setDietHistory: (data) => set({ dietHistory: data }),
     fetchDietHistory: async (userId) => {
@@ -23,12 +23,12 @@ const UseDietHistoryStore = create<DietHistoryStore>((set) => ({
             (response.error) ?
                 toast.error(response.error)
                 :
-                UseDietHistoryStore.getState().setDietHistory(response.data);
+                useDietHistoryStore.getState().setDietHistory(response.data);
         } catch (error) {
-            console.error('Error fetching diet plan data:', error);
+            console.error('Error fetching diet history data:', error);
         }
     },
     reset: () => set({ dietHistory: null })
 }));
 
-export default UseDietHistoryStore;
+export default useDietHistoryStore;

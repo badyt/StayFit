@@ -4,9 +4,10 @@
 
   .exercise-row {
       display: flex;
+      flex-wrap: wrap;
   }
 
-  .scroll-container {
+  .exercise-container {
       width: 100vw;
       overflow-x: hidden;
       white-space: nowrap;
@@ -27,27 +28,4 @@
       width: 150px;
       height: 150px;
       object-fit: cover;
-  }
-
-  .scroll-arrow {
-      position: absolute;
-      display: inline;
-      color: var(--primary-bg-color);
-      background-color: var(--button-bg-color);
-      border-radius: 9px;
-      cursor: pointer;
-      z-index: 1;
-  }
-  .scroll-arrow:hover{
-    background-color: var(--button-hover-bg-color);
-}
-
-  .scroll-arrow.left {
-      left: 0;
-      transform: translateY(6rem); 
-  }
-
-  .scroll-arrow.right {
-      right: 0;
-      transform: translateY(-8rem); 
   }

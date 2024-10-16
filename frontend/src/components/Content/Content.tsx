@@ -19,12 +19,8 @@ const Content = () => {
                 return <FoodComponent/>
             case "Diet Plan":
                 return <DietPlanPage/>
-            case "Diet History":
-                return <div>Diet History</div>
             case "Workout Routine":
                 return <WorkoutRoutinePage/>
-            case "Workout History":
-                return <div>Workout History</div>
             case "Weight Measurements":
                 return <div>Weight Measurements</div>
             case "Workout Plans":

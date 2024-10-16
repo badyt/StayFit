@@ -166,7 +166,7 @@ server.post('/completeDiet', async (req, res) => {
 server.get('/getDietHistoryForDay', async (req, res) => {
     try {
         let result = await dietHandler.getDietHistoryForDay(req.query.userId, req.query.year, req.query.month, req.query.day);
-        res.send({data: result})
+        res.send({ data: result })
     } catch (error) {
         res.send({ error: error.message })
     }
@@ -176,6 +176,33 @@ server.get('/getDietHistory', async (req, res) => {
     try {
         let dietHistory = await dietHandler.getDietHistory(req.query.userId);
         res.send({ data: dietHistory })
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+server.post('/completeWorkout', async (req, res) => {
+    try {
+        let didSucceed = await routineHandler.updateWorkoutHistory(req);
+        res.send(didSucceed)
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+server.get('/getWorkoutHistoryForDay', async (req, res) => {
+    try {
+        let result = await routineHandler.getWorkoutHistoryForDay(req.query.userId, req.query.year, req.query.month, req.query.day);
+        res.send({ data: result })
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+server.get('/getWorkoutHistory', async (req, res) => {
+    try {
+        let workoutHistory = await routineHandler.getWorkoutHistory(req.query.userId);
+        res.send({ data: workoutHistory })
     } catch (error) {
         res.send({ error: error.message })
     }

@@ -1,4 +1,4 @@
-.todays-diet-container {
+.todays-container {
     background-color: var(--secondary-bg-color);
     padding:30px;
     border-radius: 12px;
@@ -18,12 +18,12 @@
     margin-bottom: 20px;
 }
 
-.meal-list {
+.todays-list {
     list-style: none;
     padding: 0;
 }
 
-.meal-item {
+.todays-item {
     background-color: var(--button-bg-color);
     color: var(--primary-text-color);
     padding: 12px 16px;
@@ -34,17 +34,17 @@
 }
 
 
-.meal-name {
+.todays-item-name {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.meal-details {
+.todays-item-details {
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
 }
-.meal-details span {
+.todays-item-details span {
     margin-right: 5px;
     background-color: var(--details-bg-color);
     margin-top: 3px;

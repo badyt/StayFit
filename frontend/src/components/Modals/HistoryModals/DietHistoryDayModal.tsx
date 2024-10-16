@@ -1,9 +1,10 @@
 // Modal.tsx
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import "../GeneralModal.css";
 import { toast } from "react-toastify";
 import useLoginStore from "../../../stores/loginstore";
 import config from "../../../../config";
+import HistoryDay from "./GeneralHistoryDay";
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 interface ModalProps {
     date: Date;
@@ -11,24 +12,9 @@ interface ModalProps {
     onClose: () => void;
 }
 const DietHistoryDay: React.FC<ModalProps> = ({ date, totalValues, onClose }) => {
-    const modalRef = useRef<HTMLDivElement>(null);
     const { user } = useLoginStore();
-    const formatedDate = date.toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" });
-    const dayName = date.toLocaleDateString(undefined, { weekday: "long" });
     const [calories, setCalories] = useState<number | ''>('');
     const [protiens, setProtiens] = useState<number | ''>('');
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
-                onClose();
-            }
-        };
-
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [onClose]);
 
     const handleUpdate = async () => {
         if (calories && calories > 0 && protiens && protiens > 0) {
@@ -101,15 +87,7 @@ const DietHistoryDay: React.FC<ModalProps> = ({ date, totalValues, onClose }) =>
     }
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-container" style={{ width: "auto" }} ref={modalRef}>
-                <button className="modal-close-button" onClick={onClose}>×</button>
-                <h3>{formatedDate}</h3>
-                <h4>{dayName}</h4>
-                {renderDay()}
-            </div>
-        </div>
-
+        <HistoryDay date={date} onClose={onClose} renderDay={renderDay} />
     );
 };
 

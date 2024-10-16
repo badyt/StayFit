@@ -85,19 +85,36 @@ declare global {
     interface DietHistoryEntry {
         totalCalories: number;
         totalProteins: number;
-      }
-      
-      interface MonthDietHistory {
-        [day: string]: DietHistoryEntry; 
-      }
-      
-      interface YearDietHistory {
+    }
+
+    interface MonthDietHistory {
+        [day: string]: DietHistoryEntry;
+    }
+
+    interface YearDietHistory {
         [month: string]: MonthDietHistory;
-      }
-      
-      interface DietHistory {
+    }
+
+    interface DietHistory {
         [year: string]: YearDietHistory;
-      }
+    }
+
+    interface WorkoutHistoryEntry {
+        totalCalories: number;
+    }
+
+    interface MonthWorkoutHistory {
+        [day: string]: WorkoutHistoryEntry;
+    }
+
+    interface YearWorkoutHistory {
+        [month: string]: MonthWorkoutHistory;
+    }
+
+    interface WorkoutHistory {
+        [year: string]: YearWorkoutHistory;
+    }
+
 }
 export { }
 

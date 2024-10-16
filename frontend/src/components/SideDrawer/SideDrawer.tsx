@@ -27,9 +27,7 @@ type DrawerListType = DrawerTab[];
 const FirstDrawerListItems: DrawerListType = [
   { text: "Diet Plan", icon: FoodBankIcon, containSearch: false, containSelect: false, 
     selectionItems: null },
-  { text: "Diet History", icon: MenuBookIcon, containSearch: false, containSelect: false, selectionItems: null },
   { text: "Workout Routine", icon: FitnessCenterIcon, containSearch: false, containSelect: false, selectionItems: null },
-  { text: "Workout History", icon: HistoryIcon, containSearch: false, containSelect: false, selectionItems: null },
   { text: "Weight Measurements", icon: ScaleIcon, containSearch: false, containSelect: false, selectionItems: null }
 ]
 
@@ -37,8 +35,8 @@ const SecondDrawerListItems: DrawerListType = [
   { text: "Food", icon: FastfoodIcon, containSearch: true, containSelect: false, selectionItems: null },
   { text: "Workout Plans", icon: FormatListBulletedIcon, containSearch: true, containSelect: false, selectionItems: null },
   {
-    text: "Workout Exercises", icon: FitnessCenterIcon, containSearch: true, containSelect: true,
-    selectionItems: { label: "Category", items: ["all", "push", "pull", "legs"] }
+    text: "Workout Exercises", icon: FitnessCenterIcon, containSearch: true, containSelect: false,
+    selectionItems: null
   }
 ]
 

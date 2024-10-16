@@ -5,11 +5,14 @@ import { useEffect, useState } from "react";
 import config from '../../../config';
 import useExercisesStore from "../../stores/exercisesstore";
 import ExerciseModal from "../Modals/ExercisesModals/ExerciseModal";
+import PageTabs from "../PageTabs";
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 
 export default function ExercisesPage() {
+    const tabs = ["Chest", "Back", "Leg", "Shoulder", "Biceps", "Abs", "Hamstrings", "Glutes", "Quadriceps", "Calves"];
     const [selectedExercise, setSelectedExercise] = useState<Exercise | null>(null);
     const { exercisesData, setExercisesData } = useExercisesStore();
+    const [selectedTab, setTab] = useState<string>(tabs[0])
 
     const handleExerciseClick = (exercise: Exercise) => {
         setSelectedExercise(exercise);
@@ -39,15 +42,19 @@ export default function ExercisesPage() {
         }
     }, []);
 
+    const renderContent = () => {
+        // Check if a category matches the selected tab
+        const filteredCategory = exercisesData?.find(category => `${selectedTab} Exercises` === category.name);
+        return (filteredCategory) ?
+            <ExerciseCategory key={filteredCategory.id} category={filteredCategory} onExerciseClick={handleExerciseClick} />
+            : null
+    };
+
     return (
         <>
-            <Typography fontSize={"22px"} fontFamily={"Garamond"} fontWeight={"bold"} marginTop={"0.2rem"}>
-                Exercises
-            </Typography>
+            <PageTabs selectedTab={selectedTab} setTab={setTab} tabValues={tabs}></PageTabs>
             <div style={{ marginRight: "auto" }}>
-                {exercisesData?.map((category) => (
-                    <ExerciseCategory key={category.id} category={category} onExerciseClick={handleExerciseClick} />
-                ))}
+                {renderContent()}
             </div>
             {selectedExercise && (
                 <ExerciseModal

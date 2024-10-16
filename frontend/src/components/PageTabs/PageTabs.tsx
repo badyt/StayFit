@@ -8,7 +8,6 @@ interface Props {
   selectedTab: string;
 }
 export default function PageTabs({ tabValues, setTab, selectedTab }: Props) {
-  // const [value, setValue] = React.useState('one');
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setTab(newValue);
@@ -19,15 +18,14 @@ export default function PageTabs({ tabValues, setTab, selectedTab }: Props) {
       <Tabs
         value={selectedTab}
         onChange={handleChange}
-      // aria-label="secondary tabs example"
       sx={{
         '& .MuiTabs-indicator': {
-          backgroundColor: 'var(--button-hover-bg-color)', // Custom indicator color
+          backgroundColor: 'var(--button-hover-bg-color)', 
         },
         '& .MuiTab-root': {
-          color: 'var(--button-hover-bg-color)', // Custom text color
+          color: 'var(--button-hover-bg-color)', 
           '&.Mui-selected': {
-            color: 'var(--button-bg-color)', // Keep selected tab's text color
+            color: 'var(--button-bg-color)', 
           },
         },
       }}

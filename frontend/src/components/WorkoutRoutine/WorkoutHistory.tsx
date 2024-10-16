@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
-import useDietHistoryStore from "../../stores/diethistorystore";
 import useLoginStore from "../../stores/loginstore";
-import DietHistoryDay from "../Modals/HistoryModals/DietHistoryDayModal";
+import WorkoutHistoryDay from "../Modals/HistoryModals/WorkoutHistoryDayModel";
 import HistoryPlan from "../HistoryPlan";
+import useWorkoutHistoryStore from "../../stores/workouthistorystore";
 
 interface SelectedDay {
     date: Date;
-    totalValues: DietHistoryEntry | undefined;
+    workoutValues: WorkoutHistoryEntry | undefined;
 }
 
-const DietHistory: React.FC = () => {
+const WorkoutHistory: React.FC = () => {
     const [selectedDay, setSelectedDay] = useState<SelectedDay | null>(null);
     const { user } = useLoginStore();
-    const { dietHistory, fetchDietHistory } = useDietHistoryStore();
+    const { workoutHistory, fetchWorkoutHistory } = useWorkoutHistoryStore();
     // Fetch diet history once when the component mounts
     useEffect(() => {
         if (user?.userId) {
-            fetchDietHistory(user.userId);
+            fetchWorkoutHistory(user.userId);
         }
-    }, [dietHistory]); // Only runs on mount
+    }, [workoutHistory]); // Only runs on mount
 
 
     // Check if a diet is completed for the given day
@@ -26,7 +26,7 @@ const DietHistory: React.FC = () => {
         const yearString = year.toString();
         const monthString = String(month + 1).padStart(2, '0');
         const dayString = String(day).padStart(2, '0');
-        return dietHistory?.[yearString]?.[monthString]?.[dayString] !== undefined;
+        return workoutHistory?.[yearString]?.[monthString]?.[dayString] !== undefined;
     };
 
     const handleDayClick = (date: Date, isCompleted: boolean) => {
@@ -34,10 +34,10 @@ const DietHistory: React.FC = () => {
             const yearString = date.getFullYear().toString();
             const monthString = String(date.getMonth() + 1).padStart(2, '0');
             const dayString = String(date.getDate()).padStart(2, '0');
-            const totalValues = dietHistory?.[yearString]?.[monthString]?.[dayString];
-            setSelectedDay({ date: date, totalValues: totalValues })
+            const totalValues = workoutHistory?.[yearString]?.[monthString]?.[dayString];
+            setSelectedDay({ date: date, workoutValues: totalValues })
         } else {
-            setSelectedDay({ date: date, totalValues: undefined })
+            setSelectedDay({ date: date, workoutValues: undefined })
         }
     }
 
@@ -49,9 +49,9 @@ const DietHistory: React.FC = () => {
         <>
             <HistoryPlan isDayCompleted={isDietCompleted} handleDayClick={handleDayClick} />
             {selectedDay && (
-                <DietHistoryDay
+                <WorkoutHistoryDay
                     date={selectedDay.date}
-                    totalValues={selectedDay.totalValues}
+                    workoutValues={selectedDay.workoutValues}
                     onClose={handleCloseModal}
                 />
             )}
@@ -59,4 +59,4 @@ const DietHistory: React.FC = () => {
     );
 };
 
-export default DietHistory;
+export default WorkoutHistory;
