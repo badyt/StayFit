@@ -1,6 +1,6 @@
 const Database = require('../database/my-database');
 const DaysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-const { Routines_Collection, Workout_History } = require('../globals')
+const { Routines_Collection, Workout_History } = require('../globals');
 
 const addExerciseToRoutine = async (req) => {
     const { userId, day, exercise, sets, reps, weight } = req.body;

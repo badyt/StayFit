@@ -5,6 +5,7 @@ const Routines_Collection = 'workout_routines';
 const Diets_Collection = 'diet_plans';
 const Diet_History = 'diet_history';
 const Workout_History = 'workout_history';
+const Weight_History = 'weight_history';
 module.exports = {
   Emails_Collection,
   Food_Collection,
@@ -12,5 +13,6 @@ module.exports = {
   Routines_Collection,
   Diets_Collection,
   Diet_History,
-  Workout_History
+  Workout_History,
+  Weight_History
 };

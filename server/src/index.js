@@ -6,6 +6,7 @@ const Database = require('./database/my-database');
 const requestHandler = require('./handlers/requestsHandler');
 const routineHandler = require('./handlers/routineHandler');
 const dietHandler = require('./handlers/dietHandler');
+const weightHistoryHandler = require('./handlers/weightHistoryHandler');
 const { isAuth } = require('./handlers/isAuth');
 const { Food_Collection, Exercises_Collection } = require('./globals')
 const server = express();
@@ -202,6 +203,34 @@ server.get('/getWorkoutHistoryForDay', async (req, res) => {
 server.get('/getWorkoutHistory', async (req, res) => {
     try {
         let workoutHistory = await routineHandler.getWorkoutHistory(req.query.userId);
+        res.send({ data: workoutHistory })
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+
+server.post('/updateWeight', async (req, res) => {
+    try {
+        let didSucceed = await weightHistoryHandler.updateWeightHistory(req);
+        res.send(didSucceed)
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+server.get('/getWeightHistoryForDay', async (req, res) => {
+    try {
+        let result = await weightHistoryHandler.getWeightHistoryForDay(req.query.userId, req.query.year, req.query.month, req.query.day);
+        res.send({ data: result })
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+server.get('/getWeightHistory', async (req, res) => {
+    try {
+        let workoutHistory = await weightHistoryHandler.getWeightHistory(req.query.userId);
         res.send({ data: workoutHistory })
     } catch (error) {
         res.send({ error: error.message })

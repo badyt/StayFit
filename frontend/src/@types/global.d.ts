@@ -115,6 +115,22 @@ declare global {
         [year: string]: YearWorkoutHistory;
     }
 
+    interface WeightHistoryEntry {
+        weight: number;
+    }
+
+    interface MonthWeightHistory {
+        [day: string]: WeightHistoryEntry;
+    }
+
+    interface YearWeightHistory {
+        [month: string]: MonthWeightHistory;
+    }
+
+    interface WeightHistory {
+        [year: string]: YearWeightHistory;
+    }
+
 }
 export { }
 
