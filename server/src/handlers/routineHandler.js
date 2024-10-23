@@ -181,7 +181,7 @@ const getWorkoutHistory = async (userId) => {
     try {
         const result = await Database.findOne(Workout_History, { _id: userId });
         if (!result) {
-            throw new Error('No diet history found for this user.');
+            throw new Error('No workout history found for this user.');
         }
         return result.workout_history;
     } catch (error) {
@@ -189,5 +189,7 @@ const getWorkoutHistory = async (userId) => {
     }
 }
 
-module.exports = { addExerciseToRoutine, getUserRoutine, removeExerciseFromRoutine , 
-    updateWorkoutHistory ,  getWorkoutHistoryForDay, getWorkoutHistory}
+module.exports = {
+    addExerciseToRoutine, getUserRoutine, removeExerciseFromRoutine,
+    updateWorkoutHistory, getWorkoutHistoryForDay, getWorkoutHistory
+}

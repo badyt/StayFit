@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import useLoginStore from "../../../stores/loginstore";
 import config from "../../../../config";
 import HistoryDay from "./GeneralHistoryDay";
+import useWeightHistoryStore from "../../../stores/weighthistorystore";
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 interface ModalProps {
     date: Date;
@@ -12,10 +13,9 @@ interface ModalProps {
     onClose: () => void;
 }
 const WeightHistoryDay: React.FC<ModalProps> = ({ date, weightValue, onClose }) => {
-    console.log(weightValue?.weight);
-    
     const { user } = useLoginStore();
     const [weight, setWeight] = useState<number | ''>('');
+    const { fetchWeightHistory } = useWeightHistoryStore();
 
     const handleUpdate = async () => {
         if (weight && weight > 0) {
@@ -35,8 +35,8 @@ const WeightHistoryDay: React.FC<ModalProps> = ({ date, weightValue, onClose }) 
                 if (response.error) {
                     toast.error(`${response.error}`)
                 } else {
-
                     toast.info("successfully updated weight.");
+                    fetchWeightHistory(user?.userId);
                 }
             } catch (error) {
                 console.error('Error updating weight:', error);

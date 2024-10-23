@@ -18,7 +18,7 @@ const WorkoutHistory: React.FC = () => {
         if (user?.userId) {
             fetchWorkoutHistory(user.userId);
         }
-    }, [workoutHistory]); // Only runs on mount
+    }, [user?.userId]); // Only runs on mount
 
 
     // Check if a diet is completed for the given day

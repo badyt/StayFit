@@ -2,14 +2,14 @@ import { create } from 'zustand';
 import config from '../../config';
 import { toast } from 'react-toastify';
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
-interface DietHistoryStore {
+interface WorkoutHistoryStore {
     workoutHistory: WorkoutHistory | null;
     setWorkoutHistory: (data: WorkoutHistory | null) => void;
     fetchWorkoutHistory: (userId: User["userId"] | undefined) => void;
     reset: () => void;
 }
 
-const useWorkoutHistoryStore = create<DietHistoryStore>((set) => ({
+const useWorkoutHistoryStore = create<WorkoutHistoryStore>((set) => ({
     workoutHistory: null,
     setWorkoutHistory: (data) => set({ workoutHistory: data }),
     fetchWorkoutHistory: async (userId) => {

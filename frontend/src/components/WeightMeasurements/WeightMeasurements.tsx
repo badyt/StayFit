@@ -18,7 +18,7 @@ const WeightMeasurements: React.FC = () => {
         if (user?.userId) {
             fetchWeightHistory(user.userId);
         }
-    }, [weightHistory]); // Only runs on mount
+    }, [user?.userId]); // Only runs on mount
 
 
     // Check if a diet is completed for the given day
@@ -44,6 +44,7 @@ const WeightMeasurements: React.FC = () => {
     const handleCloseModal = () => {
         setSelectedDay(null);
     };
+    
 
     return (
         <>

@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import useLoginStore from "../../../stores/loginstore";
 import config from "../../../../config";
 import HistoryDay from "./GeneralHistoryDay";
+import useWorkoutHistoryStore from "../../../stores/workouthistorystore";
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 interface ModalProps {
     date: Date;
@@ -14,6 +15,7 @@ interface ModalProps {
 const WorkoutHistoryDay: React.FC<ModalProps> = ({ date, workoutValues, onClose }) => {
     const { user } = useLoginStore();
     const [calories, setCalories] = useState<number | ''>('');
+    const {fetchWorkoutHistory} = useWorkoutHistoryStore();
 
     const handleUpdate = async () => {
         if (calories && calories > 0) {
@@ -35,6 +37,7 @@ const WorkoutHistoryDay: React.FC<ModalProps> = ({ date, workoutValues, onClose 
                 } else {
 
                     toast.info("successfully completed Workout.");
+                    fetchWorkoutHistory(user?.userId);
                 }
             } catch (error) {
                 console.error('Error completing Workout:', error);

@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import WorkoutDay from "./WorkoutDay";
-import { Typography } from "@mui/material";
 import "../../styles/Plan.css";
 import { useState } from "react";
 import RoutineExerciseModal from "../Modals/ExercisesModals/RoutineExcerciseModal";

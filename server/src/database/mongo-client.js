@@ -48,7 +48,7 @@ class MongoDBClient {
       throw new Error('Database not initialized. Call connect() first.');
     }
     const collection = this.db.collection(collectionName);
-    return collection.findOne(query);
+    return await collection.findOne(query);
   }
 
   //update one document to a collection
@@ -67,7 +67,7 @@ class MongoDBClient {
       throw new Error('Database not initialized. Call connect() first.');
     }
     const collection = this.db.collection(collectionName);
-    return collection.find(query, options).project(projection).toArray();
+    return await collection.find(query, options).project(projection).toArray();
   }
 }
 

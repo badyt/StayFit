@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import useLoginStore from "../../../stores/loginstore";
 import config from "../../../../config";
 import HistoryDay from "./GeneralHistoryDay";
+import useDietHistoryStore from "../../../stores/diethistorystore";
 const url = `http://${config.SERVER_HOST}:${config.SERVER_PORT}`;
 interface ModalProps {
     date: Date;
@@ -15,7 +16,7 @@ const DietHistoryDay: React.FC<ModalProps> = ({ date, totalValues, onClose }) =>
     const { user } = useLoginStore();
     const [calories, setCalories] = useState<number | ''>('');
     const [protiens, setProtiens] = useState<number | ''>('');
-
+    const { fetchDietHistory } = useDietHistoryStore();
     const handleUpdate = async () => {
         if (calories && calories > 0 && protiens && protiens > 0) {
             try {
@@ -33,10 +34,11 @@ const DietHistoryDay: React.FC<ModalProps> = ({ date, totalValues, onClose }) =>
                     })
                 })).json();
                 if (response.error) {
-                    toast.error(`${response.error}`)
+                    toast.error(`${response.error}`);
                 } else {
 
                     toast.info("successfully completed diet.");
+                    fetchDietHistory(user?.userId);
                 }
             } catch (error) {
                 console.error('Error completing diet:', error);

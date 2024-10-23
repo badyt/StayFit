@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import './Exercises.css';
 import ExerciseCategory from './ExerciseCategory';
 import { useEffect, useState } from "react";

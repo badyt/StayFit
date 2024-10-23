@@ -7,6 +7,7 @@ import useSideDrawerStore from "../../stores/sidedrawerstore";
 import WorkoutRoutinePage from "../WorkoutRoutine"
 import DietPlanPage from "../DietPlan/DietPlanPage";
 import WeightMeasurements from "../WeightMeasurements";
+import Calculator from "../Calculator";
 const Content = () => {
     const { user } = useLoginStore();
     const { pickedDrawerTab } = useSideDrawerStore();
@@ -28,6 +29,8 @@ const Content = () => {
                 return <div>Workout Plans</div>
             case "Workout Exercises":
                 return <Exercises/>
+            case "Calculator":
+                return <Calculator/>
             default:
                 return <div>
                     This is the content.

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useState, useEffect } from "react";
 import { Button, Typography } from "@mui/material";
 import "../../styles/TodaysPlan.css";
@@ -17,13 +17,26 @@ const TodaysWorkout: React.FC = () => {
     const today = new Date();
     const todayDate = today.toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" });
     const todayDay = today.toLocaleDateString(undefined, { weekday: "long" });
-    const calculateTotalCalories = () => {
+
+    function getScalingFactor(weight: number): number {
+        if (weight < 40) return 0.5;
+        else if (weight < 100) return 0.3;
+        else return 0.2;
+    }
+
+    function calculateCaloriesPerSet(baseCalories: number, weight: number): number {
+        const a = getScalingFactor(weight);
+        return baseCalories * (1 + a * Math.log(weight / 10 + 1));
+    }
+
+    const totalCalories = useMemo(() => {
         let total = 0;
         todaysExercises?.forEach(exercise => {
-            total += exercise.calories_burnt_per_set;
-        })
-        return total;
-    }
+            total += calculateCaloriesPerSet(exercise.calories_burnt_per_set, exercise.weight) * exercise.sets;
+        });
+        return Math.round(total);
+    }, [todaysExercises]);
+
     useEffect(() => {
         const todayPlan = workoutRoutine?.find(day => day.day === todayDay);
         setTodayExercises(todayPlan?.exercises || null);
@@ -61,7 +74,7 @@ const TodaysWorkout: React.FC = () => {
                 },
                 body: JSON.stringify({
                     userId: user?.userId,
-                    totalCalories: calculateTotalCalories(),
+                    totalCalories: totalCalories,
                     date: today,
                     minutesOffset: today.getTimezoneOffset()
                 })
@@ -96,7 +109,7 @@ const TodaysWorkout: React.FC = () => {
                     ))}
                     <li>
                         <div className="total-values">
-                            <span>Total Calories: {calculateTotalCalories()}  </span>
+                            <span>Total Calories: {totalCalories}  </span>
                         </div>
                     </li>
                 </ul>

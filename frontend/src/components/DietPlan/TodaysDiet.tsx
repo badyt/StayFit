@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useState, useEffect } from "react";
 import { Button, Typography } from "@mui/material";
 import useDietPlanStore from "../../stores/dietplanstore";
@@ -17,7 +17,7 @@ const TodaysDiet: React.FC = () => {
     const today = new Date();
     const todayDate = today.toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" });
     const todayDay = today.toLocaleDateString(undefined, { weekday: "long" });
-    const calculateTotal = (nutritionType: string) => {
+    const calculateTotal = useCallback((nutritionType: string) => {
         let total = 0;
         (nutritionType === "calories") ?
             todayMeals?.forEach(meal => {
@@ -25,8 +25,9 @@ const TodaysDiet: React.FC = () => {
             }) : todayMeals?.forEach(meal => {
                 total += meal.totalProtien;
             })
-        return total;
-    }
+        return Math.round(total);
+    }, [todayMeals])
+    
     useEffect(() => {
         const todayPlan = dietPlan?.find(day => day.day === todayDay);
         setTodayMeals(todayPlan?.meals || null);
@@ -44,7 +45,7 @@ const TodaysDiet: React.FC = () => {
                 })).json();
                 if (response.data) {
                     setDietCompleted(true);
-                }else if(response.error) {
+                } else if (response.error) {
                     toast.error(`${response.error}`)
                 }
             } catch (error) {
@@ -71,7 +72,7 @@ const TodaysDiet: React.FC = () => {
                 })
             });
             const data = await response.json();
-            if(data.error) {
+            if (data.error) {
                 toast.error(`${data.error}`)
             }
             setDietCompleted(data);
@@ -105,7 +106,7 @@ const TodaysDiet: React.FC = () => {
                     </li>
                 </ul>
             ) : (
-                <Typography variant="body1" style={{marginTop: "1rem"}}>No meals planned for today.</Typography>
+                <Typography variant="body1" style={{ marginTop: "1rem" }}>No meals planned for today.</Typography>
             )}
 
             {todayMeals && todayMeals.length > 0 && <Button

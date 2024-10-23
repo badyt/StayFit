@@ -10,10 +10,9 @@ import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import FoodBankIcon from '@mui/icons-material/FoodBank';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
-import HistoryIcon from '@mui/icons-material/History';
+import CalculateIcon from '@mui/icons-material/Calculate';
 import ScaleIcon from '@mui/icons-material/Scale';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import useSideDrawerStore from '../../stores/sidedrawerstore';
@@ -38,6 +37,10 @@ const SecondDrawerListItems: DrawerListType = [
     text: "Workout Exercises", icon: FitnessCenterIcon, containSearch: true, containSelect: false,
     selectionItems: null
   }
+]
+
+const ThirdDrawerListItems : DrawerListType = [
+  {text: "Calculator", icon: CalculateIcon, containSearch: false, containSelect: false , selectionItems: null}
 ]
 
 const getListElement = (list: DrawerListType): React.ReactNode => {
@@ -71,6 +74,8 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ setDrawer, isOpen }) => {
       {getListElement(FirstDrawerListItems)}
       <Divider />
       {getListElement(SecondDrawerListItems)}
+      <Divider />
+      {getListElement(ThirdDrawerListItems)}
     </Box>
   );
 

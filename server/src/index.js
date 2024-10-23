@@ -5,6 +5,7 @@ const cors = require('cors');
 const Database = require('./database/my-database');
 const requestHandler = require('./handlers/requestsHandler');
 const routineHandler = require('./handlers/routineHandler');
+const calculatorHandler = require('./handlers/calculatorHandler');
 const dietHandler = require('./handlers/dietHandler');
 const weightHistoryHandler = require('./handlers/weightHistoryHandler');
 const { isAuth } = require('./handlers/isAuth');
@@ -232,6 +233,15 @@ server.get('/getWeightHistory', async (req, res) => {
     try {
         let workoutHistory = await weightHistoryHandler.getWeightHistory(req.query.userId);
         res.send({ data: workoutHistory })
+    } catch (error) {
+        res.send({ error: error.message })
+    }
+})
+
+server.get('/calculateAvgNutrients', async (req, res) => {
+    try {
+        let nutrients = await calculatorHandler.getAvgNutrients(req.query.userId,req.query.startDate,req.query.endDate);
+        res.send({ data: nutrients })
     } catch (error) {
         res.send({ error: error.message })
     }
